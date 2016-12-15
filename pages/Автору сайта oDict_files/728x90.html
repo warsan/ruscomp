@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(1856)http://cdn.adhigh.net/media/html/fa87280b/728x90.html?clickTAG=http%3A%2F%2Fads.betweendigital.com%2Fclick%2Fk.lV619v5Cr3eP20.KK288EvQm1BDr8ezFitAJkUqiV3OZYjluSbGNh9WXALoR3Ey7saPQvx7XkNIiYTbUk9F6vxcK9z4SJIHCyEkgIiSlBzrhi-LMzswZ4NWwRXZYL.7QmaGEcNFqb9zBYV-PmXzP3oMXBiBdCD5P6a4DquCEdnuqCIARwisCZJ1x47y0nWjEioURd39ERXhKAktQDGWIk97.j9sLYVeomjXNxTIinU44D8j4cFnQV9VaSoCtY1n.9Sh.m01c-qJFz8DeJ8fYy.U4R6nujegyq85yhQmumVP743CZupsKwyjxU29Rp1ONHK-5VXG6SqVVymqxnuOczyNe5v160NPYgsEB-3hMCyXbcjTIOHeZl64DWY7v1eowuxK4t70yCNacdMTpyZAEAYtWvxvYNKizv1dxlp5oGLynphl71KPhAf5LTBWh8%3D%2F%2Fhttp%253A%252F%252Ff10-de.adhigh.net%252Fp%252Fclick%253Fid%253D5D5p0Hq43Z9%2526s%253Dbtw%2526b%253DH4sIAAAAAAAAAFOceWVtx7mYKJZNYuaXGRzYf566NuXpRAYG7YySkgIrff2i0uLk_NwCPSOTpCS9olL9sszU8pL8gsxkvYKMAvvMFFtDc0sGMGDfDSR2eTAyMDAnlZQzOLCkgQGQGxTqxMDAZmZubmlhyHSDIYqJgYHV2NjC1AREmxmZmTMwqJgYWpoZmKZZ6qYlm5nqmhgbWupaJlkm6iamGRknGiWnGiQbmBX6q7kwnzzKDLSn9AHIyi1MTECzGA1BbDlGBiggjmG_vDWRwcLXh8FeXn5SaZCqBtChyTlGTIyMjExAZewursHeIf4BjEwMaOA_EDAwpPrmV2Xm5CTqm-oZKGiEZ-al5JcXK_iFKJjpGWoqOBYU5KSGpyZ5Z5bomxqb6xmbKWh4e4T4-ugo5GRmpyq4pyZn52sqOGcU5eem6pua6BnoGVmYGOhZWioEJ6YlFmVCdQEt5wpxDHJ3DYl3DnAGWs7EwJqZmGRowMACpMxAjmMpLilNAvkI5C5GhAdRHM5oAJRx8D6RsIjRXYPBwVkuUMmw2QBkHiM4CJmKSsFaIXrsL_tc2vSlLJzB_gNUv_1lYzBgYrA_nNC52SrvAdACAPf4bbg7AgAA%2526url%253Dhttp%25253A%25252F%25252Fads.betweendigital.com%25252Fadi%25253Fsubid%25253D1252157.1343982%252526ref%25253Dhttp%2525253A%2525252F%2525252Fruscomp.24bb.ru%2525252Fviewtopic.php%2525253Fid%2525253D179%252526tz%25253D-180%252526fl%25253D23%252526frl%25253D1%252526ord%25253D5427561754299108%252526tagType%25253Dadi%252526w%25253D728%252526h%25253D90%252526s%25253D677981%2526referrer%253D%2526js_disabled%253Dfalse%2526from_js%253Dtrue%2526r%253D77422%2526tz%253D-180%2526scr%253D1920x1080x24%2526pl%253D41452789507%2526uit%253D1481453149126&clickTarget=_blank -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="ad.size" content="width=728,height=90"><title>HTML5</title><!-- write your code here --><script src="./createjs_2015.11.26_54e1c3722102182bb133912ad4442e19_min.js.Без названия"></script><script src="./728x90.js.Без названия"></script><script>
+var canvas, stage, exportRoot;
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {	
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib._728x90();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);	    
+	//Code to support hidpi screens and responsive scaling.
+	(function(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = w*sRatio+'px';			
+			canvas.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	})(false,'both',false,1);	
+}
+</script><!-- write your code here --><style type="text/css">body {
+    margin: 0 ! important;
+    padding: 0 ! important;
+}
+
+#canvas {
+    cursor: pointer;
+}</style></head><body onload="init();" style="margin:0px;">
+	<canvas id="canvas" width="728" height="90" style="display: block; background-color: rgb(255, 255, 255); width: 728px; height: 90px;"></canvas><script>// add click TAG
+function getQueryStringValue (key) {
+    return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+}
+
+var clickArea = document.getElementById('canvas');
+clickArea.onclick = function() {
+    clickTAGvalue = getQueryStringValue('clickTAG');
+    window.open(clickTAGvalue, '_blank');
+};</script>
+</body></html>

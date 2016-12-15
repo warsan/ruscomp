@@ -1,0 +1,287 @@
+/****************************************************
+ * View the post voters v2.2 / 2.0.0
+ * Author: Romych
+ * Date: 16.05.2016 / 27.09.2016
+****************************************************/
+
+FORUM.isDifferentHostname = false;
+try {
+	self.document.location.hostname == top.document.location.hostname
+} catch (e) {
+	FORUM.isDifferentHostname = true
+}
+if (self == top || self.parent == top && FORUM.isDifferentHostname) {
+	delete FORUM.isDifferentHostname;
+	$(function() {
+		var lang_obj = {
+			"Показать всех": {en: "Show all"},
+			"оценили": {en: "voters"},
+			"Оценили": {en: "Voters"},
+			"Oценили": {en: "Voters"}
+		},
+			lang = $("html")[0].lang;
+
+		function _(text) {
+			return (lang == "ru" || !(lang_obj[text] && lang_obj[text][lang])) ? text : lang_obj[text][lang]
+		};
+
+		function a() { 
+			/*==|||==;
+
+#respect td {
+	vertical-align: top;
+}
+#respect figure {
+	margin: 2px;
+	width: 48px;
+	word-wrap: break-word;
+}
+#respect figure:hover img.vote {
+	display: none;
+}
+#respect figcaption {
+	font-size: .8em;
+	margin-top: -5px;
+}
+.rating_theme {
+	max-width: 
+}
+.rating_theme .person {
+	height: 78px;
+	width: 78px;
+}
+figure .vote {
+	border-radius: 50%;
+	box-shadow: 0 3px 5px 1px #000;
+	height: 16px;
+	position: absolute;
+	z-index: 2;
+	width: 16px;
+}
+figure .vote.plus {
+	background: url(#$2#/i/add_images.png) 0 -64px no-repeat;
+	height: 15px;
+	width: 14px;
+}
+figure .vote.minus {
+	background: url(#$2#/i/add_images.png) 0 -130px no-repeat;
+}
+#vse {
+	border-collapse: collapse;
+}
+#vse tbody {
+	display: block;
+	max-height: 40em !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+#pun .punbb .main #vse td {
+	vertical-align: top;
+	border: none 0 transparent !important;
+	padding: 0;
+	text-align: center;
+}
+#vse figure {
+	margin: 5px;
+	width: 82px;
+	word-wrap: break-word;
+	position: relative;
+}
+#vse figure a {
+	display: inline-block;
+	height: 100%;
+	backface-visibility: hidden;
+	box-shadow: 0 0 1px rgba(0,0,0,0);
+	padding-bottom: .6em;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+}
+#vse figure a:before {
+	background: currentColor;
+	bottom: 0;
+	content: "";
+	height: 4px;
+	left: 50%;
+	position: absolute;
+	right: 50%;
+	transition-duration: .3s;
+	transition-property: left,right;
+	transition-timing-function: ease-out;
+	-webkit-transition-duration: .3s;
+	-webkit-transition-property: left,right;
+	-webkit-transition-timing-function: ease-out;
+	z-index: -1;
+}
+#vse figure:hover img.vote {
+	display: none;
+}
+#vse figure:hover a:before,#vse figure:focus a:before,#vse figure:active a:before {
+	left: 0;
+	right: 0;
+}
+#vse figcaption {
+	font-size: .9em;
+}
+.tipsy-inner {
+	max-width: 820px!important;
+	min-width: 40px!important;
+}
+.tipsy-inner .person {
+	border-radius: 2px;
+	height: 40px;
+	width: 40px;
+}
+.tipsy-inner .prof {
+	color: #fff!important;
+}
+.tipsy-inner .prof:hover {
+	text-decoration: underline!important;
+}
+.tipsy-se .tipsy-arrow {
+	left: 100%!important;
+	margin-left: -22px;
+}
+.prof {
+	text-decoration: none!important;
+}
+@media screen and (max-width:540px) {
+	.rating_theme .person {
+		height: 40px!important;
+		width: 40px!important;
+	}
+	#vse figure {
+		margin: 2px 5px;
+		width: auto !important;
+	}
+	#pun .punbb .main .pun-modal.rating_theme .closer {
+		position: absolute !important;
+	}
+	#vse tbody {
+		padding-right: 1em;
+		margin-right: -1em;
+		max-height: 30em !important;
+	}
+}
+@media screen and (max-width:400px) {
+	#vse figure {
+		margin: 2px 2px;
+		width: auto !important;
+	}
+}
+			==|||==;*/ 
+		}
+		a = "<style>" + (a.toString().split("==|||==;")[1].replace(/#\$2#/gm, StaticURL)) + "</style>";
+		$(a).appendTo("head");
+		$("div.post").map(function() {
+			try {
+				var h = $(this).find("div.post-content").attr("id").slice(1, -8)
+			} catch (d) {
+				h = 0
+			}
+			var b = $(this).find(".post-rating p");
+			var l, c, i, f, j = [];
+
+			function k() {
+				$(".tipsy").fadeOut(200);
+				setTimeout(function() {
+					$(".tipsy").remove()
+				}, 200)
+			}
+
+			function g() {
+				c = setTimeout(function() {
+					k()
+				}, 500)
+			}
+			$(b).on("mouseenter", function() {
+				$(this).tipsy({
+					fade: !0,
+					gravity: "se",
+					trigger: "manual",
+					html: !0
+				});
+				var m = '<table id="respect"><tr><td style="font-weight:bolder"> ' + _('Oценили') + ': </td></tr><tr>';
+				var n = '<table id="vse" width="100%"><tr>';
+				l = setTimeout(function() {
+					$.get("/api.php", {
+						method: "post.getVotes",
+						sort_dir: "desc",
+						limit: 100,
+						post_id: h,
+						fields: "user_id,username,avatar,value,datetime"
+					}, function(s) {
+						var o = s.response.votes;
+						for (var r in o) {
+							var q = o[r];
+							f = q.value;
+							if (f == 1) {
+								f = "plus"
+							} else {
+								f = "minus"
+							}
+							i = q.avatar;
+							if (i == "") {
+								i = StaticURL + "/i/default_avatar.jpg"
+							}
+							j[r] = '<td><figure><img class="vote ' + f + '" src="/i/blank.gif"><a class="prof" href="/profile.php?id=' + q.user_id + '"><img class="person" src="' + i + '" title="' + q.datetime + '"><figcaption><p>' + q.username + "</p></figcaption></a></figure></td>"
+						}
+						m += j.slice(0, 5).join(" ");
+						m += "</tr></table>";
+						if (j.length >= 6) {
+							m += '<p id="showt" style="cursor:pointer;font-weight:bold;margin:5px;"> ' + _('Показать всех') + ' </p>'
+						}
+						$(b).attr("original-title", m).tipsy("show");
+						for (var p = 0; p < j.length; p++) {
+							n += j[p];
+							if (p % 5 == 4) {
+								n += "</tr><tr>"
+							}
+						}
+						n += "</tr></table>";
+						$("#showt").mybbModal({
+							theme: "rating_theme",
+							title: j.length + " " + _("оценили"),
+							onopen: function() {
+								if ($('.pun-modal:visible').length)
+									k()
+							},
+							onfirstset: function() {
+								var t = $(".pun-modal.rating_theme").find("table tr:first"),
+									w = t.width(),
+									h = t.height();
+								w += parseInt($(".rating_theme .container").css("padding-left")) * 2;
+								if (h * $(".rating_theme tr").length > $("#vse").height())
+									w += 16;
+								$(".pun-modal.rating_theme .modal-inner").css("width", w + "px");
+								var l = t.find("figure").length;
+								$(".pun-modal.rating_theme figure").css("max-width", ($("#vse").width() / l - parseInt(t.find("figure:first").css("margin-left"))*2) + "px");
+							},
+							onclose: function() {
+								setTimeout(function() {
+									$(".pun-modal.rating_theme").remove();
+								}, $.fn.mybbModal.defaults.animationDuration);
+							},
+							content: n,
+							css: {
+								width: "38.5em",
+								marginTop: "4%"
+							}
+						})
+					}, "json")
+				}, 600)
+			}).on("mouseleave", function() {
+				clearTimeout(l);
+				g();
+				$(".tipsy").on("mouseover", function() {
+					clearTimeout(c)
+				});
+				$(".tipsy").on("mouseout", function() {
+					g()
+				})
+			});
+		})
+	})
+};

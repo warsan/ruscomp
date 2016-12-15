@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(1428)http://content.targetix.net/Hybrid/6114B2C0B19DE8FE8217423A42989ED3/728x90_quartz_Suzuki_v2.html?cu=http://dsa.targetix.net/?_wNaJC_90dGc291gRYyM_ZNbmd6OvTkWZEDyl3PGqDCvtxosfsi6_GaU.wuThTSCEbAuB4dYNWZjhmZ4B.COEY3BIVD_FyDTT03EfW1nLxYyUXd_i9h2IF6kCkK8Hk8jrYrMpq9alC7ooN5ic9NRFia4_4q_kq3rBE9BrSSkAHQeMigj0.MMg9W3dAuPIc9w4n5ajPn7tkQq_4U1EQg4Eq.MYAqRfcRhGGsGJ_A5y0AoyoxUteMx3tBCWHaztlUFaFtBGgCkbD0ON7.CJRAHbJerZ1iAZdpaaoz7LE7e3KgbNss5Pkz._SUnRq9Fbf1MR9k16Wy4uCQaA6.vD45fdPNap519h1ZuJ2p2Orq7LQNq_AHWVd6ekOrJi8TGJYzOV.gfYHMEHVCAxaOsW6iDuekJ4SAR2RRoiaJG3wAztuQttZDVBNnkkESsy0ZoK_jmkGrl3Wp39xwmEAeTanmBZDCtSFcNvhLbylOsKVzRXpvStXUBew2yo6qGPxhoOms6qMeENmR5_4e3FN6bMGIFRPqfVtdVFsxmmpOteHbDByuVU.IxVLb1RUMii9F6QlySaaJFiS9oDTaPP4b1RxIOhWbPSj005cUHhXlwUaII4cAOuhHzwKTgKi3Fr4SGBMnGPCp_DsjeRKKembKhJDr_C9RRXLWX..hJ_oY7C37JM4F9nLzsetbcEdnth570m2rD8_mlWHSaXvuFZMd1eL.9EJssEMikJRd.wNmf6Gs18QbeIklojsx7_WBSuR8NKvUsBSmlvrJWDK0_q56Pgl7X.EdR_xlXOypWi0N8mb9ssELUvaKBTglI2XcsMHZaOGsZpYa_NFQYx4jRVkwxlseY9QwP1f6l0KwuLqCR4Itu5dug40wf5RUFl3BiV6AQtZLPIPIOpPF7STrgAi3IwvSN.y0l6LDpyJwyAOoZWY7PkfQXuh5mMBQKn3zR7dDOvapRPgen7n6cDigP1haFh5ORtH0TNACzbYa4RGHU0b9SuH0q5X04uyNBUkyacSL1HBDz4rL95J3eUhaoyY3SxcAloXEXbnExb06LWbQp5xQzw111VTNtnn69rR9Yp6aQ8Vi39MBTe6zKV1QZ6lhbYgl6uCwCMAOAGL8ee7bfamuwiimxAkLoH9y23_ofn9EmUC9HlZP_maRf07z8Vb2209.Mv4rPpzV0UYzx9w5fCiEq5bQda8QTAWhVOPeHvKvdOh23PfvxzQ3Ng.2wpCWihX2u.n6FqZQItUFLDyRCYp_rBiLqFYZV13JcGXpZ70mJ9qZt0fHmpOkPyuV.b8hMvpSdwgA -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ad.size" content="width=728,height=90">
+<title>728x90_quartz_Suzuki_v2</title>
+<!-- write your code here -->
+
+
+<script src="./createjs-2015.11.26.min.js.Без названия"></script>
+<script src="./728x90_quartz_Suzuki_v2.js.Без названия"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	// --- write your JS code here ---
+	
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete(evt) {
+	exportRoot = new lib._728x90_quartz_Suzuki_v2();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+</script>
+
+<!-- write your code here -->
+
+<style type="text/css">
+    body {
+        cursor: pointer;
+    }
+</style><script>
+    window._tx = window._tx || {};
+    window._tx.handleClick = function () {
+        var cu;
+        (function (q) {
+            var i = Math.max(q.indexOf("?cu="), q.indexOf("&cu="));
+            cu = q.substring(i + 4);
+        })(window.location.href);
+        if (cu && cu.length !== 0) {
+            var checkUA = function (v) {
+                return window.navigator.userAgent.indexOf(v) != -1;
+            };
+            if (window.navigator && window.navigator.standalone && (checkUA("iPhone") && !checkUA("iPod") && !checkUA("iPad") || checkUA("iPad") || checkUA("iPod"))) {
+                var a = window.document.createElement("a");
+                a.setAttribute("href", cu);
+                a.setAttribute("target", "_blank");
+                var e = window.document.createEvent("MouseEvent");
+                e.initMouseEvent("click", true, true, window, 1);
+                a.dispatchEvent(e);
+            } else {
+                window.open(cu, "_blank", "");
+            }
+        }
+    };
+</script></head>
+<body onload="init();" style="background-color:#D4D4D4;margin:0px;" onclick="window._tx.handleClick();">
+	<canvas id="canvas" width="728" height="90" style="background-color:#FFFFFF"></canvas>
+
+
+</body></html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0042)http://ruscomp.24bb.ru/viewtopic.php?id=28 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="русские вычислители, русские ЭВМ, ЭВМ, отечественные ЭВМ, вычислительная техника, отечественная вычилсительная техника, русская вычислительная техника, русские ЯП, русское программирование, русские языки программирования, отечественные языки программирования, программирование по-русски, ЯП, языки программирования, язык программирования Глагол, ЯП Глагол, Глагол, русский язык, русская информатика, русские ИТ, русские ИВТ">
+<meta name="wmail-verification" content="91c154b3396b6364">
+<title>О языке Оберон</title>
+<script type="text/javascript">
+try{self.document.location.hostname==parent.document.location.hostname&&self.window!=parent.window&&self.parent.window!=parent.parent.window&&document.write('</head><body style="display:none"><plaintext>')}catch(e){}
+var FORUM = new Object({ set : function(prop, val){ try { eval("this."+prop+"=val"); } catch (e) {} }, get : function(prop){ try { var val = eval("this."+prop); } catch (e) { var val = undefined; } return val; }, remove : function(prop, val){ try { eval("delete this."+prop); } catch (e) {} } });
+FORUM.set('topic', { "subject": "О языке Оберон", "closed": "0", "num_replies": "20", "num_views": "370", "forum_id": "24", "forum_name": "О языках программирования", "moderators": [  ], "language": { "share_legend": "Расскажите друзьям!" } });
+// JavaScript переменные форума
+var BoardID = 1188459;
+var BoardCat = 11;
+var BoardStyle = 'Oxygen';
+var ForumAPITicket = '71e9f170dad9f2c94d8abf4eed2d6d6bac6317d4';
+var GroupID = 3;
+var GroupTitle = 'Гости';
+var GroupUserTitle = 'Гость';
+var BaseDomain = '24bb.ru';
+var PartnerID = 174;
+var RequestTime = 1481452299;
+var StaticURL = 'http://forum4.ru';
+</script>
+<script type="text/javascript" src="./О языке Оберон_files/libs.10.min.js.Без названия"></script>
+<script type="text/javascript" src="./О языке Оберон_files/extra.8.js.Без названия"></script>
+<link rel="alternate" type="application/rss+xml" href="http://ruscomp.24bb.ru/export.php?type=rss&amp;tid=28" title="RSS">
+<link rel="top" href="http://ruscomp.24bb.ru/" title="">
+<link rel="search" href="http://ruscomp.24bb.ru/search.php" title="Поиск">
+<link rel="author" href="http://ruscomp.24bb.ru/userlist.php" title="Участники">
+<link rel="up" title="О языках программирования" href="http://ruscomp.24bb.ru/viewforum.php?id=24">
+<link rel="shortcut icon" href="http://co.forum4.ru/f/ru/24bb/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="./О языке Оберон_files/Oxygen.css">
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="http://forum4.ru/style/style_fix.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://forum4.ru/style/style_fix7.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="./О языке Оберон_files/extra.38.css">
+<link rel="stylesheet" type="text/css" href="./О языке Оберон_files/mobile.5.css">
+<script type="text/javascript">$(function() { $('#register img[title],#profile8 img[title]').tipsy({fade: true, gravity: 'w'}); $('#viewprofile img[title],.post-author img[title]:not(li.pa-avatar > img)').tipsy({fade: true, gravity: 's'}); });</script>
+<script type="text/javascript" src="./О языке Оберон_files/post_voters.js.Без названия"></script>
+<script type="text/javascript" src="./О языке Оберон_files/user_avatars.js.Без названия"></script><style>
+.punbb em.user-avatar {
+	float: left;
+	height: 32px;
+}
+#pun-index .user-avatar {
+	height: 40px;
+	vertical-align: middle;
+}
+.punbb .user-avatar .user-avatar-link {
+	padding: 0 !important;
+	background: none transparent !important;
+}
+.punbb .user-avatar .user-avatar-link:after {
+	content: none !important;
+}
+.punbb .user-avatar img.ava {
+	border: 2px solid currentColor !important;
+	border-radius: 50%;
+	height: 28px;
+	width: 28px;
+	margin: 1px 9px 2px 0px;
+	opacity: 0.85;
+	background-position: center center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.punbb .user-avatar img.ava:hover {
+	opacity: 1;
+}
+.punbb .user-avatar img.on_ {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	display: block !important;
+	float: right;
+	margin: 3px 8px 0 -16px;
+	position: relative;
+	animation: blinkColor .9s linear infinite;
+	-moz-animation: blinkColor .9s linear infinite;
+	-webkit-animation: blinkColor .9s linear infinite;
+	background: #8ac176;
+	z-index: 100;
+}
+@keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+@-moz-keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+@-webkit-keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+		</style>
+<style>
+
+#respect td {
+	vertical-align: top;
+}
+#respect figure {
+	margin: 2px;
+	width: 48px;
+	word-wrap: break-word;
+}
+#respect figure:hover img.vote {
+	display: none;
+}
+#respect figcaption {
+	font-size: .8em;
+	margin-top: -5px;
+}
+.rating_theme {
+	max-width: 
+}
+.rating_theme .person {
+	height: 78px;
+	width: 78px;
+}
+figure .vote {
+	border-radius: 50%;
+	box-shadow: 0 3px 5px 1px #000;
+	height: 16px;
+	position: absolute;
+	z-index: 2;
+	width: 16px;
+}
+figure .vote.plus {
+	background: url(http://forum4.ru/i/add_images.png) 0 -64px no-repeat;
+	height: 15px;
+	width: 14px;
+}
+figure .vote.minus {
+	background: url(http://forum4.ru/i/add_images.png) 0 -130px no-repeat;
+}
+#vse {
+	border-collapse: collapse;
+}
+#vse tbody {
+	display: block;
+	max-height: 40em !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+#pun .punbb .main #vse td {
+	vertical-align: top;
+	border: none 0 transparent !important;
+	padding: 0;
+	text-align: center;
+}
+#vse figure {
+	margin: 5px;
+	width: 82px;
+	word-wrap: break-word;
+	position: relative;
+}
+#vse figure a {
+	display: inline-block;
+	height: 100%;
+	backface-visibility: hidden;
+	box-shadow: 0 0 1px rgba(0,0,0,0);
+	padding-bottom: .6em;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+}
+#vse figure a:before {
+	background: currentColor;
+	bottom: 0;
+	content: "";
+	height: 4px;
+	left: 50%;
+	position: absolute;
+	right: 50%;
+	transition-duration: .3s;
+	transition-property: left,right;
+	transition-timing-function: ease-out;
+	-webkit-transition-duration: .3s;
+	-webkit-transition-property: left,right;
+	-webkit-transition-timing-function: ease-out;
+	z-index: -1;
+}
+#vse figure:hover img.vote {
+	display: none;
+}
+#vse figure:hover a:before,#vse figure:focus a:before,#vse figure:active a:before {
+	left: 0;
+	right: 0;
+}
+#vse figcaption {
+	font-size: .9em;
+}
+.tipsy-inner {
+	max-width: 820px!important;
+	min-width: 40px!important;
+}
+.tipsy-inner .person {
+	border-radius: 2px;
+	height: 40px;
+	width: 40px;
+}
+.tipsy-inner .prof {
+	color: #fff!important;
+}
+.tipsy-inner .prof:hover {
+	text-decoration: underline!important;
+}
+.tipsy-se .tipsy-arrow {
+	left: 100%!important;
+	margin-left: -22px;
+}
+.prof {
+	text-decoration: none!important;
+}
+@media screen and (max-width:540px) {
+	.rating_theme .person {
+		height: 40px!important;
+		width: 40px!important;
+	}
+	#vse figure {
+		margin: 2px 5px;
+		width: auto !important;
+	}
+	#pun .punbb .main .pun-modal.rating_theme .closer {
+		position: absolute !important;
+	}
+	#vse tbody {
+		padding-right: 1em;
+		margin-right: -1em;
+		max-height: 30em !important;
+	}
+}
+@media screen and (max-width:400px) {
+	#vse figure {
+		margin: 2px 2px;
+		width: auto !important;
+	}
+}
+			</style></head>
+<body>
+
+<!-- body-header -->
+<div id="pun_wrap">
+<div id="pun" class="ru isguest gid3">
+<div id="pun-viewtopic" class="punbb">
+
+<div id="xxbb-counter" style="display:none">
+<script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click;xxbb' "+
+"target=_blank><img src='http://counter.yadro.ru/hit;xxbb?t26.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число посетителей за"+
+" сегодня' "+
+"border=0 width=1 height=1><\/a>")//--></script><a href="http://www.liveinternet.ru/click;xxbb" target="_blank"><img src="./О языке Оберон_files/hit" alt="" title="LiveInternet: показано число посетителей за сегодня" border="0" width="1" height="1"></a>
+</div>
+<div id="mybb-counter" style="display:none">
+<script type="text/javascript"><!--
+new Image().src = "http://counter.yadro.ru/hit;ruhelp?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape('PARTNER_PAGE_174')+";"+Math.random();
+new Image().src = "http://ruscomp.24bb.ru/vc?1188459;"+Math.random();
+new Image().src = "http://bs.mybb.ru/c?pk=2e9b334b2f2b2dc6258876a319f0215dd0337e93&r=584d2b0b373cd6.17228123"//--></script>
+</div>
+
+<!-- html_header -->
+
+<div id="pun-title" class="section">
+	<table id="title-logo-table" cellspacing="0">
+		<tbody id="title-logo-tbody">
+			<tr id="title-logo-tr">
+				<td id="title-logo-tdl" class="title-logo-tdl">
+					<h1 class="title-logo"><span>Русские вычислители</span></h1>
+				</td>
+				<td id="title-logo-tdr" class="title-logo-tdr"><!-- banner_top --></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div id="pun-navlinks" class="section">
+	<h2><span>Меню навигации</span></h2>
+	<ul class="container">
+		<li id="navindex"><a href="http://ruscomp.24bb.ru/"><span>Форум</span></a></li>
+		<li id="navuserlist"><a href="http://ruscomp.24bb.ru/userlist.php" rel="nofollow"><span>Участники</span></a></li>
+		<li id="navrules"><a href="http://ruscomp.24bb.ru/misc.php?action=rules" rel="nofollow"><span>Правила</span></a></li>
+		<li id="navsearch"><a href="http://ruscomp.24bb.ru/search.php" rel="nofollow"><span>Поиск</span></a></li>
+		<li id="navregister"><a href="http://ruscomp.24bb.ru/register.php" rel="nofollow"><span>Регистрация</span></a></li>
+		<li id="navlogin"><a href="http://ruscomp.24bb.ru/login.php" rel="nofollow"><span>Войти</span></a></li>
+	</ul>
+</div>
+
+<div id="pun-ulinks" class="section" onclick="void(0)">
+	<h2><span>Пользовательские ссылки</span></h2>
+	<ul class="container">
+		<li class="item1"><a href="http://ruscomp.24bb.ru/search.php?action=show_recent">Активные темы</a></li>
+	</ul>
+</div>
+
+<!-- pun_announcement -->
+
+<div id="pun-status" class="section">
+	<h2><span>Информация о пользователе</span></h2>
+	<p class="container">
+		<span class="item1">Привет, Гость!</span> 
+		<span class="item2"><a href="http://ruscomp.24bb.ru/login.php" rel="nofollow">Войдите</a> или <a href="http://ruscomp.24bb.ru/register.php" rel="nofollow">зарегистрируйтесь</a>.</span> 
+	</p>
+</div>
+
+<div id="pun-break1" class="divider"><hr></div>
+
+<div id="pun-crumbs1" class="section">
+	<p class="container crumbs"><strong>Вы здесь</strong> »&nbsp;<a href="http://ruscomp.24bb.ru/">Русские вычислители</a> »&nbsp;<a href="http://ruscomp.24bb.ru/viewforum.php?id=24">О языках программирования</a> »&nbsp;О языке Оберон</p>
+</div>
+
+<div id="pun-break2" class="divider"><hr></div>
+
+<div class="section" style="border:0 !important; max-width:100%; padding:10px 0 0 10px">
+		<!-- MyBB reklama start -->
+<div id="gdgrbtho"><script src="./О языке Оберон_files/sa1.js.Без названия"></script><iframe src="./О языке Оберон_files/sa1.html" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" scrolling="no" style="width: 470px; height: 62px;"></iframe></div>
+<script type="text/javascript">
+!function(){var t=window,e="inner";if("innerWidth"in window||(e="client",t=document.documentElement||document.body),!(t[e+"Width"]<541)){var r=1,i=document.getElementById("gdgrbtho"),n=document.createElement("script");n.src="http://adverweb.ru/ads/sa"+r+".js",i.appendChild(n),n.onerror=function(){("undefined"==typeof BoardCat||2!=BoardCat||16!=BoardCat)&&(ifrm=document.createElement("IFRAME"),ifrm.setAttribute("src","http://xfanclub.ru/1.html"),ifrm.setAttribute("frameborder","0"),ifrm.setAttribute("marginheight","0"),ifrm.setAttribute("marginwidth","0"),ifrm.setAttribute("allowtransparency","true"),ifrm.setAttribute("scrolling","no"),ifrm.style.width="730px",ifrm.style.height="92px",i=document.getElementById("gdgrbtho"),i.appendChild(ifrm))}}}();
+</script>
+<!-- MyBB reklama end -->
+</div>
+
+<div id="pun-main" class="main multipage">
+	<h1><span>О языке Оберон</span></h1>
+	<div class="linkst">
+		<div class="pagelink">Страница: <strong>1</strong></div>
+		<div class="postlink"><a href="http://ruscomp.24bb.ru/post.php?tid=28" rel="nofollow"><span>Ответить</span></a></div>
+	</div>
+	<div class="topic">
+		<h2><span class="item1">Сообщений</span> <span class="item2">1 страница 21 из 21</span></h2>
+		<div id="p310" class="post topicpost" data-posted="1376553999" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p310" onclick="return false;" title="">Поделиться</a><strong>1</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p310">15.08.2013 12:06:39</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p310-content" class="post-content">
+						<p>Чтобы не мешать все темы в кучу, сделал новую ветку. Тема берёт начало <a href="http://ruscomp.24bb.ru/click.php?http://ruscomp.24bb.ru/viewtopic.php?id=7#p303" rel="nofollow" target="_blank">отсюда</a>.</p>
+						<p>Вообще то понятие «<a href="http://ruscomp.24bb.ru/click.php?http://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D1%85%D0%B0%D1%80" rel="nofollow" target="_blank">синтаксический сахар (смотрим Википедию)</a> не имеет устоявшегося определения. Обычно он имеет 2 толкования. Первое (более распространённое) – это когда одни и те же вещи можно написать разными способами. Во втором случае это понятие применяется к тем конструкциям языка, без которых в языке, в принципе, можно обойтись. Например, «then» после «if» компилятору не нужен, он нужен некоторым программистам «для наглядности». С этой точки зрения «then» и есть синтаксический сахар.</p>
+						<p>Если остановиться на первом толковании понятия «синтаксический сахар», то можно сказать, что в Обероне нет анонимных функций, поэтому написать так же, как в статье по приведённой ссылке<br></p><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 4.5em"><pre>map( function(x){return x*2;}, a );</pre></div></div></div><p>не получится. Можно использовать именованные функции, но они 1) будут описаны в другом месте 2) не будут скрытыми. Т.е. добиться ровно того же не получится. Значит, это не «то же самое, только другим способом». Значит, это не синтаксический сахар в первом понимании.</p>
+						<p>Если брать второе толкование, то приведённый пример как раз то лишён всех «излишеств». А если добиваться того же именованными функциями, то код удлиняется и появляется синтаксический сахар. Поэтому желание писать программы как в вышеприведённом примере – это требование синтаксический сахар убрать. </p>
+						<p>Опять же обращу Ваше внимание, что в Обероне нет чистых функций. А они позволяют уменьшить количество состояний программы. Т.е. уменьшить её логическую сложность. А это, в принципе, повышает её надёжность. Между тем, последнее время языки активно дополняются функциональными возможностями: C++11, D, Nemerle и другие. Функциональная парадигма в чистом виде не оправдала себя, как универсальная и пригодная на все случаи жизни. Но в гибридных языках она приживается как некое подмножество и может найти применение в оправданных случаях.</p>
+						<p>В языке D есть контактное программирование. Это проверка значений на входе и выходе функций. Этого можно добиться обычными «if». Но в D эти проверки можно отключить при компиляции, когда код хорошо проверен. А в обычных языках «if» - это обычная сооружение. Как преобразователь отличит проверочное «if» от обычных «if», чтобы отключить эту проверку, которая стала ненужной?</p>
+						<p>Или взять действитель «break&nbsp; n» из PHP. С одной стороны, без него можно обойтись, используя обычный «break». С другой – он делает код проще и короче.</p>
+						<p>Конечно, что функциональные, что контрактные добавки в язык этот язык утяжеляют. Растёт количество правил в БНФ, растёт число страниц в учебниках. Но это ускоряет разработку программ и увеличивает их надёжность. Значит, это оправдано.</p>
+						<p>Оберон же, остановившись на минимальном, но достаточно мощном императивном подмножестве, остановился вообще. Не желает выйти из этих рамок. Может, именно поэтому он не востребован? И в мировых, и в российском <a href="http://ruscomp.24bb.ru/click.php?http://www.compiler.su/vse-yazyki-ekvivalentny-no-nekotorye-iz-nikh-ekvivalentnee-drygikh.php" rel="nofollow" target="_blank">рейтингах языков программирования</a> он вообще не наблюдаем. Можно, конечно, на зеркало попенять. Но можно просто задуматься: а почему? Автор языка имеет право на своё видение. Плохо получилось у него или хорошо – это уже голосуют пользователи языка.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+<!-- banner_first_post -->
+				</div>
+			</div>
+		</div>
+		<div id="p315" class="post altstyle" data-posted="1376567352" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p315" onclick="return false;" title="">Поделиться</a><strong>2</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p315">15.08.2013 15:49:12</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p315-content" class="post-content">
+						<p>Перевод на скорую руку по одной из ссылок.<br>Причина использования заглавных букв в Обероне вместо подсветки синтаксиса.<br>- если добавляются новые ключевые слова в язык, то заглавные буквы -&nbsp; страховка от того, что новое ключевое слово уже используется в старых программах в идентификаторах, которые пишутся строчными<br>- подсветка синтаксиса хороша на экране, но бесполезна на монохромных принтерах<br>- подсветка синтаксиса бесполезна для дальтоников</p>
+						<p>Лично мне не нравится в Обероне синтаксис. Эти эстетические соображения лишают желания вникать в семантику. Это как с женщинами: желание познакомиться с глубоким внутренним миром какой-то дамы возникает тогда, когда он облачен в привлекательные формы <img src="./О языке Оберон_files/smile.gif" alt=":)"> Поэтому не знаток Оберона, отнюдь <img src="./О языке Оберон_files/smile.gif" alt=":)"> А вполне себе профан.<br></p><div class="quote-box"><blockquote><p>JavaScript функциональный ЯП в отличии от императивного Оберона, и тем хорош.</p></blockquote></div><p> Он не чисто фунциональный, он гибридный; в нём как императивное, так и функциональное.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p358" class="post" data-posted="1378891528" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p358" onclick="return false;" title="">Поделиться</a><strong>3</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p358">11.09.2013 13:25:28</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p358-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Растёт количество правил в БНФ, растёт число страниц в учебниках. Но это ускоряет разработку программ и увеличивает их надёжность. Значит, это оправдано.</p></blockquote></div><p><br>К вопросу о надёжности: это как раз уменьшает надёжность ПО, никто и никогда не станет писать ПО для космических кораблей и спутников на Си или Си++, Ди или ещё на чём-нибудь. В России чаще всего используют ту же Модулу-2 для этих целей. Слышал, что пишут на Си (вроде решетнёвцы), но исходники на Си всё равно сначала переводятся в исходники на Модуле-2.<br>И вот, познакомьтесь со статьёй: <a href="http://ruscomp.24bb.ru/click.php?http://oberon2005.oberoncore.ru/paper/obe_drm.pdf" rel="nofollow" target="_blank">ОБЕРОН — воплощение мечты Никлауса Вирта. Сергей Свердлов</a></p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p364" class="post altstyle" data-posted="1378900427" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p364" onclick="return false;" title="">Поделиться</a><strong>4</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p364">11.09.2013 15:53:47</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p364-content" class="post-content">
+						<p>С возвращением Вас! Что-то давно Вас тут не было. Не пропадайте так надолго...<br></p><div class="quote-box"><blockquote><p>никто и никогда не станет писать ПО для космических кораблей и спутников на Си или Си++</p></blockquote></div><p>А вот и заблуждаетесь. Дело в том, что там высокие требования по радиационной стойкости. Чтобы тяжёлые заряженные частицы не оказывали большого влияния на электронику, транзисторы в ней должны быть крупными. По этой причине используются старинные процессоры со старинной памятью. Поэтому очень жёсткие требования к программам по скорости и памяти. И выбирается как раз таки Си, как наиболее близкий к машинному. Используется чуть ли не Borland Turbo C. Операции умножения в таких программах нередко заменяется операцией сдвига. Код становится трудночитаемым, но всё подчинено задаче добиться максимальной эффективности... На Хабре было несколько статей на эту тему.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p373" class="post" data-posted="1378918328" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p373" onclick="return false;" title="">Поделиться</a><strong>5</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p373">11.09.2013 20:52:08</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p373-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>И выбирается как раз таки Си, как наиболее близкий к машинному. Используется чуть ли не Borland Turbo C.</p></blockquote></div><p><br>Везде пишут, что у нас используют Модулу-2. Да и я общался с одним из бывших решетнёвцев (это они делают Глонассы).</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p378" class="post altstyle" data-posted="1378979304" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p378" onclick="return false;" title="">Поделиться</a><strong>6</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p378">12.09.2013 13:48:24</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p378-content" class="post-content">
+						<p>Я не утверждаю, что везде Си. Просто отвечаю на Ваше, что "никто не будет писать для космоса на Си". Возможно, на ГЛОНАСС другие языки, потому, что другие процессоры, потому что на низких орбитах, на который летает ГЛОНАСС, уровень радиации невысок. На геостационарных или высокоэллиптических орбитах он выше. В дальнем космосе (например, программа "Фобос") магнитного поля Земли вообще нет, поэтому техника должна быть ещё надёжнее. Недавно писали, что и люди не долетят до Марса живыми - они получат смертельную дозу радиации.</p>
+						<p>Чтобы узнать все подробности, надо работать в этой отрасли. А зарплаты там для программистов - увы не высоки, например, в Пилюгинском центре - 30 тыс. Сравните это с бабаяновским МЦСТ - 120 тыс.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p382" class="post" data-posted="1378987745" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p382" onclick="return false;" title="">Поделиться</a><strong>7</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p382">12.09.2013 16:09:05</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p382-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Я не утверждаю, что везде Си. Просто отвечаю на Ваше, что "никто не будет писать для космоса на Си". Возможно, на ГЛОНАСС другие языки, потому, что другие процессоры, потому что на низких орбитах, на который летает ГЛОНАСС, уровень радиации невысок. На геостационарных или высокоэллиптических орбитах он выше. В дальнем космосе (например, программа "Фобос") магнитного поля Земли вообще нет, поэтому техника должна быть ещё надёжнее. Недавно писали, что и люди не долетят до Марса живыми - они получат смертельную дозу радиации.</p>
+						<p>Чтобы узнать все подробности, надо работать в этой отрасли. А зарплаты там для программистов - увы не высоки, например, в Пилюгинском центре - 30 тыс. Сравните это с бабаяновским МЦСТ - 120 тыс.</p></blockquote></div><p><br>Там не дураки сидят. Это к вопросу о смерти космонавтов. Раз наши собираются лететь на Марс, значит есть возможности защитить людей от опасного излучения.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p384" class="post altstyle" data-posted="1378990966" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p384" onclick="return false;" title="">Поделиться</a><strong>8</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p384">12.09.2013 17:02:46</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p384-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Раз наши собираются лететь на Марс, значит есть возможности защитить людей от опасного излучения.</p></blockquote></div><p>Так это только недавно до космических агентств "дошло". Установили на каком-то аппарате, летевшем к Марсу, регистратор радиации. Узнали её величину. Умножили на 2 (для обратного пути) и поняли, что это - смертельная доза. Многометровая по толщине защита уменьшит уровень, но масса марсианской миссии многократно увеличивается и становится невозможной для современных ракет-носителей. Выход один - уменьшить время в пути. Поэтому работают над ядерными двигателями - и наши, и американцы. Тогда туда и обратно можно будет обернуться за 2-3 месяца, а не за 1,5 года.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p386" class="post" data-posted="1378994361" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p386" onclick="return false;" title="">Поделиться</a><strong>9</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p386">12.09.2013 17:59:21</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p386-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Так это только недавно до космических агентств "дошло". Установили на каком-то аппарате, летевшем к Марсу, регистратор радиации. Узнали её величину. Умножили на 2 (для обратного пути) и поняли, что это - смертельная доза. Многометровая по толщине защита уменьшит уровень, но масса марсианской миссии многократно увеличивается и становится невозможной для современных ракет-носителей. Выход один - уменьшить время в пути. Поэтому работают над ядерными двигателями - и наши, и американцы. Тогда туда и обратно можно будет обернуться за 2-3 месяца, а не за 1,5 года.</p></blockquote></div><p><br>Есть ещё один способ: собирать корабль на орбите.&nbsp; А недавно газете "Завтра" советник главы РКК "Энергия" Александр Железняков рассказал, что наши хотят использовать Луну как космодром подскока для полётов в том числе и на Марс: <a href="http://ruscomp.24bb.ru/click.php?http://zavtra.ru/content/view/postroim-bazu-na-lune" rel="nofollow" target="_blank">http://zavtra.ru/content/view/postroim-bazu-na-lune</a></p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p388" class="post altstyle" data-posted="1378999004" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p388" onclick="return false;" title="">Поделиться</a><strong>10</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p388">12.09.2013 19:16:44</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p388-content" class="post-content">
+						<div class="quote-box"><blockquote><p>газете "Завтра"</p></blockquote></div><p> Никогда не читал <img src="./О языке Оберон_files/smile.gif" alt=":)"> Везде продаётся, но... Что-то мешает мне её читать. Наверно от того, что она из той прессы, где много места уделяется раскрытию заговоров, козней недругов. Не верю вчерашним коммунистам, которые игнорируют то, чему их учили в институтах и университетах. А их (как и меня, впрочем) учили марксистско-ленинской философии, которая почти отрицает субъективные факторы в истории и политике. Исторические процессы, по этой науке, объективны. Роль личностей в истории почти равна нулю. Она не равна нулю в том случае, когда действия отдельных людей лежат в русле объективных исторических процессов.</p>
+						<p>Гитлер оказал некоторое влияние на историю, но если бы его не было, то нашёлся бы другой, на которого был бы спрос среди немецкого населения, недовольного итогами 1 мировой войны. Ленин возглавил большевистский переворот, потому что его идеи и лозунги были востребованы. Случившуюся революцию нельзя объяснить только тем, что Ленин был немецким шпионом. Наполеон тоже не на пустом месте появился.</p>
+						<p>А эти "писатели" пытаются дать&nbsp; историческим поворотам очень простые объяснения. "Собрались 3 плохих человека и изменили судьбу миллионов, развалили СССР" - примерно так пишут. Но СССР распался не потому, что Ельцин, Кравчук и Шушкевич много выпили накануне. И Варшавский договор распался не потому, что Горбачёв был предатель. Надо просто видеть объективность исторических процессов.</p>
+						<div class="quote-box"><blockquote><p>собирать корабль на орбите</p></blockquote></div><p>Это значит, что он не будет подвергнут тщательным испытаниям на стендах и в лабораториях. Отдельные элементы - можно, в сборе - нет. Это будет ненадёжная техника. </p>
+						<p>Ну мы отвлеклись. <strong>Эта ветка - про Оберон!</strong></p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p395" class="post" data-posted="1379076992" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p395" onclick="return false;" title="">Поделиться</a><strong>11</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p395">13.09.2013 16:56:32</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p395-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Это значит, что он не будет подвергнут тщательным испытаниям на стендах и в лабораториях. Отдельные элементы - можно, в сборе - нет. Это будет ненадёжная техника.</p></blockquote></div><p><br>Подозреваю, что большую часть массы составляет топливо. Так что его можно вывести на орбиту сухим, а там уже заправлять.</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>А эти "писатели" пытаются дать&nbsp; историческим поворотам очень простые объяснения. "Собрались 3 плохих человека и изменили судьбу миллионов, развалили СССР" - примерно так пишут. Но СССР распался не потому, что Ельцин, Кравчук и Шушкевич много выпили накануне. И Варшавский договор распался не потому, что Горбачёв был предатель. Надо просто видеть объективность исторических процессов.</p></blockquote></div><p><br>Неверно. Горбачёв очень много усилий приложил к тому, чтобы развалить СССР. Собственно, с него всё и началось. Что касается т.н. "объективных исторических процессов", то это сродни так называемой "невидимой руке рынка" — очень удобно, чтобы оправдывать виновных. Но я не спорю, предатели всегда учитывали особенности сложившейся обстановки, создавшиеся условия в стране и использовали их в своих целях. Да, Ленин бы не пришёл к власти, если бы не плохое положение рабочих и крестьян, другие трудности в стране, но он использовал их, чтобы к власти прийти, а не они его за ручку вели. А Гитлера так вообще Запад к власти привёл. И, конечно же, они тоже использовал сложившиеся в Германии условия. Более того, они даже их искусственно меняли. Почитайте книгу Старикова "Кто заставил Гитлера напасть на Сталина?"</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p396" class="post altstyle" data-posted="1379078134" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p396" onclick="return false;" title="">Поделиться</a><strong>12</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p396">13.09.2013 17:15:34</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p396-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Никогда не читал&nbsp; Везде продаётся, но... Что-то мешает мне её читать.</p></blockquote></div><p><br>Статья-то стоящая. Беседа с представителем "Энергии" как-никак.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p397" class="post" data-posted="1379078432" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p397" onclick="return false;" title="">Поделиться</a><strong>13</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p397">13.09.2013 17:20:32</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p397-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Подозреваю, что большую часть массы составляет топливо. Так что его можно вывести на орбиту сухим, а там уже заправлять.</p></blockquote></div><p> Я думаю, они разберутся. Главное, чтобы не "пилили". А то ведь почему последний "Протон" упал при старте? Говорят, что из 3 "Глонассов" были исправны только 2, а третий в виде "отката" Сердюков взял себе. Авария должна была скрыть последующий позор.<br></p><div class="quote-box"><blockquote><p>Горбачёв очень много усилий приложил к тому, чтобы развалить СССР</p></blockquote></div><p>Знаете, в обществе был большой спрос на перемены. "Перемен требуют наши глаза, перемен требуют наши сердца". В газетах писали одно, а правда жизни была другой. ЦК КПСС рапортовал об успехах, а вот о пустых полках магазинов никто не говорил - в телевизоре всё было хорошо. Первую правду о Чернобыле узнали от "вражьих голосов". Люди хотели жить в правде. Другое дело, что они были обмануты в ожиданиях.<br></p><div class="quote-box"><blockquote><p>Что касается т.н. "объективных исторических процессов", то это сродни так называемой "невидимой руке рынка" — очень удобно, чтобы оправдывать виновных</p></blockquote></div><p>Знаете, когда вчерашние материалисты говорят о потусторонних силах - я им не верю. Когда вчера они вещали с кафедр об этих самых "объективных исторических процессах" (это их слова, а не мои), а сегодня о том, что самый прогрессивный строй рухнул в результате заговора 3 человек - это смешно. Это антинаучно - по их же словам.</p>
+						<p>Как-то один молодой человек попросил совета у древнегреческого философа Сократа. Он спросил: "Я хочу жениться. Как Вы считаете, нужно мне жениться или нет?". Мудрец ему ответил: "Как бы ты сейчас не поступил, ты всё равно пожалеешь об этом".</p>
+						<p>Так же и в отношении СССР. С одной стороны - жаль, что нашей Родины больше нет. А с другой... Однажды утром, в воскресение, я спустился в метро. По воскресением оно малолюдно. А тут... Мама родная! Метро забито от края до края, а лица все - не наши! Наших лиц почти нет! Куда я попал?! Оказывается - Курбан Байрам. Такое ощущение, что попал в оккупированный город. Сейчас они тут гастарбайтеры, на птичьих правах. А будь жив СССР, они бы были полноправными гражданами, имели бы те же права, в том числе командовать парадом... Может, и правильно, что они теперь отдельно от нас? Вот такие мысли...</p>
+						<p>Хочу ещё раз заметить, что <strong>эта ветка - про Оберон</strong> <img src="./О языке Оберон_files/smile.gif" alt=":)"></p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p403" class="post altstyle" data-posted="1379162224" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p403" onclick="return false;" title="">Поделиться</a><strong>14</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p403">14.09.2013 16:37:04</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p403-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Я думаю, они разберутся. Главное, чтобы не "пилили". А то ведь почему последний "Протон" упал при старте? Говорят, что из 3 "Глонассов" были исправны только 2, а третий в виде "отката" Сердюков взял себе. Авария должна была скрыть последующий позор.</p></blockquote></div><p><br>Это лютый пипец, Юрий. Ну, это же бред! Я знаю, что пилят. Но это уже не смешно. В такую чушь все готовы верить, а считающих причиной случившегося диверсией или саботажем называют сумасшедшими. Это несправедливо.</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Знаете, в обществе был большой спрос на перемены. "Перемен требуют наши глаза, перемен требуют наши сердца". В газетах писали одно, а правда жизни была другой. ЦК КПСС рапортовал об успехах, а вот о пустых полках магазинов никто не говорил - в телевизоре всё было хорошо. Первую правду о Чернобыле узнали от "вражьих голосов". Люди хотели жить в правде. Другое дело, что они были обмануты в ожиданиях.</p></blockquote></div><p><br>Полностью согласен. Недовольство людей и их желание перемен использовали как раз для того, чтобы уничтожить СССР. Я вам даже больше скажу: я уверен, что 92-й год (в смысле ужасающего обесценивания рубля) устроили намеренно, чтобы уничтожить все накопления советских граждан как источник средств для приватизации с целью впоследствии провести т.н. ваучеризацию под предлогом отсутствия у населения таких средств и прочие афёры и отыметь таким образом всю страну, присвоя всё себе и своим. И дефицит товаров был устроен искусственно (открыли границы на вывоз, после чего все предприятия стали работать на внешние рынки, лишая своих граждан возможности покупать даже самые необходимые товары), чтобы накопить денежную массу на руках у населения (и в виде сбережений), чтобы впоследствии после отпуска цен до приватизации она хлынула в народное хозяйство, устроя взрывную инфляцию, а также для усиления у населения недовольства властью, которое впоследствии использовали для приведения к власти т.н. демократов. Все тогдашние события выглядят так, как-будто были очень хорошо продуманы и осуществлены искусственно. Ход примерно такой: дефицит &gt; рост денежной массы, которую людям некуда потратить, и их недовольства &gt; приведение к власти либералов и демократов &gt; отпуск цен до приватизации &gt; взрывная инфляция &gt; ... Было ещё много причин, в том числе и таких же искусственных.</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Знаете, когда вчерашние материалисты говорят о потусторонних силах - я им не верю. Когда вчера они вещали с кафедр об этих самых "объективных исторических процессах" (это их слова, а не мои), а сегодня о том, что самый прогрессивный строй рухнул в результате заговора 3 человек - это смешно. Это антинаучно - по их же словам.</p></blockquote></div><p><br>Никто не говорит про трёх человек. Там работали западные разведки, их политики, наши предатели. Много людей над этим работало.<br>А они так говорили, потому что их так учили, жизнь же им показала, как может быть на самом деле.</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Так же и в отношении СССР. С одной стороны - жаль, что нашей Родины больше нет. А с другой... Однажды утром, в воскресение, я спустился в метро. По воскресением оно малолюдно. А тут... Мама родная! Метро забито от края до края, а лица все - не наши! Наших лиц почти нет! Куда я попал?! Оказывается - Курбан Байрам. Такое ощущение, что попал в оккупированный город. Сейчас они тут гастарбайтеры, на птичьих правах. А будь жив СССР, они бы были полноправными гражданами, имели бы те же права, в том числе командовать парадом... Может, и правильно, что они теперь отдельно от нас? Вот такие мысли...</p></blockquote></div><p><br>Юрий, при СССР они бы жили у себя не хуже нас и никуда не поехали бы. А если бы и поехали, то их проводили бы назад. А не захотели бы возвращаться, вернули бы силой. Это сейчас государство занимается этническим мазохизмом. Кстати, то, что они на птичьих правах, рано или поздно приведёт к тому, что они устроят бунт и прав полных добьются, но у современного государства духу не хватит поставить их на место, утопив этот бунт в крови. А вот у советского хватало. Так что ещё неизвестно, к чему это всё приведёт. Возможно, скоро не Кавказ отделится от России, а сама Москва, когда в ней какой-нибудь Абдула к власти придёт со своей "Партией московских мусульман". Тем более не хочу туда ехать <img src="./О языке Оберон_files/smile.gif" alt=":-)"></p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Хочу ещё раз заметить, что эта ветка - про Оберон</p></blockquote></div><p><br>Так я не против. Просто не смог не ответить.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p404" class="post" data-posted="1379162638" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p404" onclick="return false;" title="">Поделиться</a><strong>15</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p404">14.09.2013 16:43:58</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p404-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>не получится. Можно использовать именованные функции, но они 1) будут описаны в другом месте 2) не будут скрытыми. Т.е. добиться ровно того же не получится.</p></blockquote></div><p><br>Юрий, а что значит "не будут скрытыми"? Скрытыми от других отделов (модулей) или вообще? От других отделов скрыть можно.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p405" class="post altstyle" data-posted="1379181602" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p405" onclick="return false;" title="">Поделиться</a><strong>16</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p405">14.09.2013 22:00:02</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p405-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Ну, это же бред! Я знаю, что пилят. Но это уже не смешно. В такую чушь все готовы верить, а считающих причиной случившегося диверсией или саботажем называют сумасшедшими. Это несправедливо.</p></blockquote></div><p>Я там свечку не держал. Просто такую версию уже озвучивали. На мой взгляд, не очень вероятно.<br></p><div class="quote-box"><blockquote><p>что значит "не будут скрытыми"? Скрытыми от других отделов (модулей) или вообще?</p></blockquote></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 22.5em"><pre>function F1(arg1)
+{
+    // внутри - определение ещё одной функции - F2
+    function F2(arg2)
+    {
+    }
+
+    // здесь, внутри F1, мы можем вызвать F2:
+    F2 (123);
+}
+// а здесь уже не можем:
+   F2 (123);  // ошибка, здесь функция не видна
+}</pre></div></div></div>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p660" class="post" data-posted="1395726395" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p660" onclick="return false;" title="">Поделиться</a><strong>17</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p660">25.03.2014 09:46:35</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p660-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Это значит, что он не будет подвергнут тщательным испытаниям на стендах и в лабораториях. Отдельные элементы - можно, в сборе - нет. Это будет ненадёжная техника.</p></blockquote></div><div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Это будет ненадёжная техника.</p></blockquote></div><p><br>А вы у нас специалист по космическим кораблям?<br>Да и с чего вы взяли, что такой корабль нельзя будет сначала собрать на земле, испытать в сборе, а потом уже разобрать и частями вывести в околоземье, после чего собрать уже испытанный корабль?<br>Мысль вроде бы очевидная.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p661" class="post altstyle" data-posted="1395744371" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p661" onclick="return false;" title="">Поделиться</a><strong>18</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p661">25.03.2014 14:46:11</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p661-content" class="post-content">
+						<p>На Северном флоте ВМФ было такое происшествие. Ракеты загружались в подлодку, но их не просто размещали там, их ещё подключали через кабели к самой подлодке. Ведь управление ими должно быть. Мичман, который подключал кабели, перепутал полярность. Короткое замыкание, мичман сгорает в ракетной струе, сама ракета улетает хрен знает куда. Это я о проблемах сборки.</p>
+						<p>Будет ли на орбите возможность проверить правильность всех соединений? А ещё в космосе бывает такой эффект: металлические поверхности «прилипают» друг к другу. Вы уверены, что всё будет хорошо? Вы гарантируете, что сборка в космосе будет такая же, как и на земле?</p>
+						<p>Ещё раз напомню – эта ветка про Оберон.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p685" class="post" data-posted="1396541169" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p685" onclick="return false;" title="">Поделиться</a><strong>19</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p685">03.04.2014 20:06:09</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p685-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>На Северном флоте ВМФ было такое происшествие. Ракеты загружались в подлодку, но их не просто размещали там, их ещё подключали через кабели к самой подлодке. Ведь управление ими должно быть. Мичман, который подключал кабели, перепутал полярность. Короткое замыкание, мичман сгорает в ракетной струе, сама ракета улетает хрен знает куда. Это я о проблемах сборки.</p></blockquote></div><p><br>У американцев тоже происшествий хватало. И что, теперь после каждого происшествия отказываться от всего? Например, на орбитальной станции Мир один раз загорелась кислородная шашка, устроив пожар. Чудом все остались в живых. Но это ведь не значит, что нужно отказаться от выработки кислорода на станции или вообще от станций? Так что нужно после таких происшествий работать над тем, чтобы подобного более не случалось, а не сворачивать все и вся.</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Будет ли на орбите возможность проверить правильность всех соединений?</p></blockquote></div><p><br>Рано или поздно, космонавтика подойдёт вплотную к необходимости сборки кораблей и орбитальных станций на орбите. Уже подошла, ведь орбитальные станции Мир и МКС и так собирали на орбите, так как целиком их не выведешь туда, слишком тяжёлые и громоздкие. Так что опыт уже есть. А собирать можно готовыми испытанными частями (отсеками, блоками; вы ведь не думаете, что их там сварщики и слесари на орбите будут болтаться и изготавливать <img src="./О языке Оберон_files/lol.gif" alt=":D">), а проверять должны умные электронные системы, благо научно-технический уровень уже позволяет это делать — проводить самопроверку всех систем и узлов.</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>А ещё в космосе бывает такой эффект: металлические поверхности «прилипают» друг к другу.</p></blockquote></div><p><br>Ну, значит нужно разработать особые сплавы и покрытия, или перейти на полимеры, композитные материалы. В любом случае, Мир и МКС каким-то чудом умудрились собрать, и причём качественно. Мир вообще был расчитан на три-четыре года, а проработал все 15 лет.</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Вы уверены, что всё будет хорошо? Вы гарантируете, что сборка в космосе будет такая же, как и на земле?</p></blockquote></div><p><br>Никто ничего не гарантирует, а если и гарантирует, то Роскосмос и Росгосстрах — выплаты в случае неудачи.</p>
+						<p>Гляньте, какие большие и сложные станции:</p>
+						<p><img class="postimg" src="./О языке Оберон_files/Mir_Space_Station_viewed_from_Endeavour_during_STS-89.jpg" alt="http://upload.wikimedia.org/wikipedia/commons/0/09/Mir_Space_Station_viewed_from_Endeavour_during_STS-89.jpg?uselang=ru"></p>
+						<p><img class="postimg" src="./О языке Оберон_files/STS-134_International_Space_Station_after_undocking.jpg" alt="http://upload.wikimedia.org/wikipedia/commons/c/c9/STS-134_International_Space_Station_after_undocking.jpg?uselang=ru"></p>
+						<p>Как думаете, как они проверяли правильность соединений и кто гарантировал качество?</p>
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Ещё раз напомню – эта ветка про Оберон.</p></blockquote></div><p><br>Я знаю, но видите, как получается <img src="./О языке Оберон_files/smile.gif" alt=":-)"></p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p686" class="post altstyle" data-posted="1396541471" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p686" onclick="return false;" title="">Поделиться</a><strong>20</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p686">03.04.2014 20:11:11</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p686-content" class="post-content">
+						<p>Кстати, собранный из испытанных частей корабль можно будет испытать и на орбите. Это будет даже лучше, чем наземные испытания. Стойте! Так ведь и собираемые на Земле корабли тоже проходят испытания в космосе! Так что, наоборот, это будет такая же надёжная техника.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p687" class="post endpost" data-posted="1396550376" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p687" onclick="return false;" title="">Поделиться</a><strong>21</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=28#p687">03.04.2014 22:39:36</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./О языке Оберон_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p687-content" class="post-content">
+						<p>Не хочу больше спорить. Давайте вернёмся к Оберону, т.е. к теме этой ветки.</p>
+						<p>Есть статья Сергея Свердлова <a href="http://ruscomp.24bb.ru/click.php?http://www.uni-vologda.ac.ru/cs/syntax/ariphm.htm" rel="nofollow" target="_blank">Арифметика синтаксиса</a>, которая воспевает подход Н.Вирта. Но есть ещё вполне обоснованная критика методов механического подсчёта правил языка, статья Евгения Зуева <a href="http://ruscomp.24bb.ru/click.php?https://sites.google.com/site/zouev54/tekusie-proekty/arithmetics-2" rel="nofollow" target="_blank">Арифметика синтаксиса-2</a>.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+<!-- banner_last_post -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="linksb">
+		<div class="postlink"><a href="http://ruscomp.24bb.ru/post.php?tid=28" rel="nofollow"><span>Ответить</span></a></div>
+		<div class="pagelink">Страница: <strong>1</strong></div>
+	</div>
+	<div class="section" style="border:0 !important; max-width:100%; text-align:center">
+		<!-- MyBB reklama start -->
+<div id="ughjgrtj"><script src="./О языке Оберон_files/sa2.js.Без названия"></script><iframe src="./О языке Оберон_files/sa2.html" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" scrolling="no" style="width: 730px; height: 92px;"></iframe></div>
+<script type="text/javascript">
+!function(){var t=window,e="inner";"innerWidth"in window||(e="client",t=document.documentElement||document.body);var r=t[e+"Width"]>540?2:3,i=document.getElementById("ughjgrtj"),n=document.createElement("script");n.src="http://adverweb.ru/ads/sa"+r+".js",i.appendChild(n),n.onerror=function(){if(t[e+"Width"]>540)var r=2,n=730,d=92;else var r=3,n=302,d=252;("undefined"==typeof BoardCat||2!=BoardCat||16!=BoardCat)&&(ifrm=document.createElement("IFRAME"),ifrm.setAttribute("src","http://xfanclub.ru/"+r+".html"),ifrm.setAttribute("frameborder","0"),ifrm.setAttribute("marginheight","0"),ifrm.setAttribute("marginwidth","0"),ifrm.setAttribute("allowtransparency","true"),ifrm.setAttribute("scrolling","no"),ifrm.style.width=n+"px",ifrm.style.height=d+"px",i=document.getElementById("ughjgrtj"),i.appendChild(ifrm))}}();
+</script>
+<!-- MyBB reklama end -->
+</div>
+</div>
+<script type="text/javascript">$(document).trigger("pun_main_ready");</script>
+
+<!-- pun_stats -->
+
+<!-- banner_mini_bottom -->
+
+<!-- banner_bottom -->
+
+<div id="pun-break3" class="divider"><hr></div>
+
+<div id="pun-crumbs2" class="section">
+	<p class="container crumbs"><strong>Вы здесь</strong> »&nbsp;<a href="http://ruscomp.24bb.ru/">Русские вычислители</a> »&nbsp;<a href="http://ruscomp.24bb.ru/viewforum.php?id=24">О языках программирования</a> »&nbsp;О языке Оберон</p>
+</div>
+
+<div id="pun-break4" class="divider"><hr></div>
+
+<div id="pun-about" class="section">
+	<p class="container">
+		<span class="item1" style="padding-left:0"><a href="http://24bb.ru/" target="_blank">форум на 24bb</a>
+Создать <a href="http://xxbb.ru/" target="_blank">форум</a> бесплатно
+</span>
+	</p>
+</div>
+<script type="text/javascript">$(document).trigger("pun_about_ready");</script>
+
+
+<!-- html_footer -->
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="tooltipsy2765" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=310" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=310" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=310" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=310" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=310" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=310" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=310" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=310" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=310" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=310" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=310" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=310" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6385" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=315" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=315" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=315" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=315" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=315" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=315" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=315" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=315" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=315" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=315" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=315" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=315" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy4189" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=358" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=358" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=358" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=358" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=358" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=358" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=358" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=358" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=358" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=358" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=358" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=358" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy214" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=364" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=364" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=364" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=364" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=364" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=364" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=364" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=364" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=364" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=364" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=364" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=364" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy2477" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=373" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=373" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=373" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=373" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=373" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=373" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=373" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=373" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=373" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=373" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=373" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=373" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7812" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=378" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=378" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=378" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=378" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=378" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=378" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=378" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=378" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=378" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=378" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=378" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=378" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy458" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=382" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=382" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=382" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=382" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=382" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=382" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=382" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=382" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=382" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=382" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=382" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=382" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy5960" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=384" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=384" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=384" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=384" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=384" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=384" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=384" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=384" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=384" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=384" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=384" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=384" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7147" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=386" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=386" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=386" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=386" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=386" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=386" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=386" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=386" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=386" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=386" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=386" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=386" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7467" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=388" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=388" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=388" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=388" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=388" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=388" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=388" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=388" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=388" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=388" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=388" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=388" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy2836" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=395" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=395" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=395" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=395" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=395" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=395" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=395" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=395" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=395" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=395" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=395" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=395" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy2804" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=396" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=396" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=396" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=396" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=396" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=396" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=396" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=396" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=396" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=396" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=396" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=396" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy9214" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=397" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=397" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=397" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=397" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=397" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=397" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=397" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=397" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=397" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=397" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=397" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=397" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6043" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=403" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=403" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=403" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=403" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=403" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=403" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=403" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=403" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=403" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=403" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=403" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=403" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy8909" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=404" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=404" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=404" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=404" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=404" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=404" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=404" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=404" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=404" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=404" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=404" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=404" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy522" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=405" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=405" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=405" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=405" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=405" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=405" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=405" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=405" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=405" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=405" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=405" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=405" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy345" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=660" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=660" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=660" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=660" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=660" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=660" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=660" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=660" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=660" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=660" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=660" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=660" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6023" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=661" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=661" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=661" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=661" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=661" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=661" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=661" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=661" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=661" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=661" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=661" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=661" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy4655" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=685" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=685" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=685" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=685" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=685" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=685" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=685" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=685" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=685" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=685" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=685" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=685" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy5516" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=686" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=686" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=686" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=686" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=686" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=686" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=686" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=686" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=686" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=686" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=686" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=686" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7274" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=687" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=687" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=687" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=687" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=687" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=687" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=687" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=687" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=687" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=687" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=687" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=687" target="_blank" title="delicious"></a></div></div></div></div></body></html>

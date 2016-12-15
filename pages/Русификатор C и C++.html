@@ -1,0 +1,1698 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0042)http://ruscomp.24bb.ru/viewtopic.php?id=67 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="русские вычислители, русские ЭВМ, ЭВМ, отечественные ЭВМ, вычислительная техника, отечественная вычилсительная техника, русская вычислительная техника, русские ЯП, русское программирование, русские языки программирования, отечественные языки программирования, программирование по-русски, ЯП, языки программирования, язык программирования Глагол, ЯП Глагол, Глагол, русский язык, русская информатика, русские ИТ, русские ИВТ">
+<meta name="wmail-verification" content="91c154b3396b6364">
+<title>Русификатор C и C++</title>
+<script type="text/javascript">
+try{self.document.location.hostname==parent.document.location.hostname&&self.window!=parent.window&&self.parent.window!=parent.parent.window&&document.write('</head><body style="display:none"><plaintext>')}catch(e){}
+var FORUM = new Object({ set : function(prop, val){ try { eval("this."+prop+"=val"); } catch (e) {} }, get : function(prop){ try { var val = eval("this."+prop); } catch (e) { var val = undefined; } return val; }, remove : function(prop, val){ try { eval("delete this."+prop); } catch (e) {} } });
+FORUM.set('topic', { "subject": "Русификатор C и C++", "closed": "0", "num_replies": "46", "num_views": "671", "forum_id": "18", "forum_name": "Иные русские языки программирования", "moderators": [  ], "language": { "share_legend": "Расскажите друзьям!" } });
+// JavaScript переменные форума
+var BoardID = 1188459;
+var BoardCat = 11;
+var BoardStyle = 'Oxygen';
+var ForumAPITicket = '71e9f170dad9f2c94d8abf4eed2d6d6bac6317d4';
+var GroupID = 3;
+var GroupTitle = 'Гости';
+var GroupUserTitle = 'Гость';
+var BaseDomain = '24bb.ru';
+var PartnerID = 174;
+var RequestTime = 1481452941;
+var StaticURL = 'http://forum4.ru';
+</script>
+<script type="text/javascript" src="./Русификатор C и C++_files/libs.10.min.js.Без названия"></script>
+<script type="text/javascript" src="./Русификатор C и C++_files/extra.8.js.Без названия"></script>
+<link rel="alternate" type="application/rss+xml" href="http://ruscomp.24bb.ru/export.php?type=rss&amp;tid=67" title="RSS">
+<link rel="top" href="http://ruscomp.24bb.ru/" title="">
+<link rel="search" href="http://ruscomp.24bb.ru/search.php" title="Поиск">
+<link rel="author" href="http://ruscomp.24bb.ru/userlist.php" title="Участники">
+<link rel="up" title="Иные русские языки программирования" href="http://ruscomp.24bb.ru/viewforum.php?id=18">
+<link rel="shortcut icon" href="http://co.forum4.ru/f/ru/24bb/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="./Русификатор C и C++_files/Oxygen.css">
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="http://forum4.ru/style/style_fix.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://forum4.ru/style/style_fix7.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="./Русификатор C и C++_files/extra.38.css">
+<link rel="stylesheet" type="text/css" href="./Русификатор C и C++_files/mobile.5.css">
+<script type="text/javascript">$(function() { $('#register img[title],#profile8 img[title]').tipsy({fade: true, gravity: 'w'}); $('#viewprofile img[title],.post-author img[title]:not(li.pa-avatar > img)').tipsy({fade: true, gravity: 's'}); });</script>
+<script type="text/javascript" src="./Русификатор C и C++_files/post_voters.js.Без названия"></script>
+<script type="text/javascript" src="./Русификатор C и C++_files/user_avatars.js.Без названия"></script><style>
+.punbb em.user-avatar {
+	float: left;
+	height: 32px;
+}
+#pun-index .user-avatar {
+	height: 40px;
+	vertical-align: middle;
+}
+.punbb .user-avatar .user-avatar-link {
+	padding: 0 !important;
+	background: none transparent !important;
+}
+.punbb .user-avatar .user-avatar-link:after {
+	content: none !important;
+}
+.punbb .user-avatar img.ava {
+	border: 2px solid currentColor !important;
+	border-radius: 50%;
+	height: 28px;
+	width: 28px;
+	margin: 1px 9px 2px 0px;
+	opacity: 0.85;
+	background-position: center center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.punbb .user-avatar img.ava:hover {
+	opacity: 1;
+}
+.punbb .user-avatar img.on_ {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	display: block !important;
+	float: right;
+	margin: 3px 8px 0 -16px;
+	position: relative;
+	animation: blinkColor .9s linear infinite;
+	-moz-animation: blinkColor .9s linear infinite;
+	-webkit-animation: blinkColor .9s linear infinite;
+	background: #8ac176;
+	z-index: 100;
+}
+@keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+@-moz-keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+@-webkit-keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+		</style>
+<style>
+
+#respect td {
+	vertical-align: top;
+}
+#respect figure {
+	margin: 2px;
+	width: 48px;
+	word-wrap: break-word;
+}
+#respect figure:hover img.vote {
+	display: none;
+}
+#respect figcaption {
+	font-size: .8em;
+	margin-top: -5px;
+}
+.rating_theme {
+	max-width: 
+}
+.rating_theme .person {
+	height: 78px;
+	width: 78px;
+}
+figure .vote {
+	border-radius: 50%;
+	box-shadow: 0 3px 5px 1px #000;
+	height: 16px;
+	position: absolute;
+	z-index: 2;
+	width: 16px;
+}
+figure .vote.plus {
+	background: url(http://forum4.ru/i/add_images.png) 0 -64px no-repeat;
+	height: 15px;
+	width: 14px;
+}
+figure .vote.minus {
+	background: url(http://forum4.ru/i/add_images.png) 0 -130px no-repeat;
+}
+#vse {
+	border-collapse: collapse;
+}
+#vse tbody {
+	display: block;
+	max-height: 40em !important;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+#pun .punbb .main #vse td {
+	vertical-align: top;
+	border: none 0 transparent !important;
+	padding: 0;
+	text-align: center;
+}
+#vse figure {
+	margin: 5px;
+	width: 82px;
+	word-wrap: break-word;
+	position: relative;
+}
+#vse figure a {
+	display: inline-block;
+	height: 100%;
+	backface-visibility: hidden;
+	box-shadow: 0 0 1px rgba(0,0,0,0);
+	padding-bottom: .6em;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+}
+#vse figure a:before {
+	background: currentColor;
+	bottom: 0;
+	content: "";
+	height: 4px;
+	left: 50%;
+	position: absolute;
+	right: 50%;
+	transition-duration: .3s;
+	transition-property: left,right;
+	transition-timing-function: ease-out;
+	-webkit-transition-duration: .3s;
+	-webkit-transition-property: left,right;
+	-webkit-transition-timing-function: ease-out;
+	z-index: -1;
+}
+#vse figure:hover img.vote {
+	display: none;
+}
+#vse figure:hover a:before,#vse figure:focus a:before,#vse figure:active a:before {
+	left: 0;
+	right: 0;
+}
+#vse figcaption {
+	font-size: .9em;
+}
+.tipsy-inner {
+	max-width: 820px!important;
+	min-width: 40px!important;
+}
+.tipsy-inner .person {
+	border-radius: 2px;
+	height: 40px;
+	width: 40px;
+}
+.tipsy-inner .prof {
+	color: #fff!important;
+}
+.tipsy-inner .prof:hover {
+	text-decoration: underline!important;
+}
+.tipsy-se .tipsy-arrow {
+	left: 100%!important;
+	margin-left: -22px;
+}
+.prof {
+	text-decoration: none!important;
+}
+@media screen and (max-width:540px) {
+	.rating_theme .person {
+		height: 40px!important;
+		width: 40px!important;
+	}
+	#vse figure {
+		margin: 2px 5px;
+		width: auto !important;
+	}
+	#pun .punbb .main .pun-modal.rating_theme .closer {
+		position: absolute !important;
+	}
+	#vse tbody {
+		padding-right: 1em;
+		margin-right: -1em;
+		max-height: 30em !important;
+	}
+}
+@media screen and (max-width:400px) {
+	#vse figure {
+		margin: 2px 2px;
+		width: auto !important;
+	}
+}
+			</style></head>
+<body>
+
+<!-- body-header -->
+<div id="pun_wrap">
+<div id="pun" class="ru isguest gid3">
+<div id="pun-viewtopic" class="punbb">
+
+<div id="xxbb-counter" style="display:none">
+<script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click;xxbb' "+
+"target=_blank><img src='http://counter.yadro.ru/hit;xxbb?t26.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число посетителей за"+
+" сегодня' "+
+"border=0 width=1 height=1><\/a>")//--></script><a href="http://www.liveinternet.ru/click;xxbb" target="_blank"><img src="./Русификатор C и C++_files/hit" alt="" title="LiveInternet: показано число посетителей за сегодня" border="0" width="1" height="1"></a>
+</div>
+<div id="mybb-counter" style="display:none">
+<script type="text/javascript"><!--
+new Image().src = "http://counter.yadro.ru/hit;ruhelp?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape('PARTNER_PAGE_174')+";"+Math.random();
+new Image().src = "http://ruscomp.24bb.ru/vc?1188459;"+Math.random();
+new Image().src = "http://bs.mybb.ru/c?pk=cfcc83b8d90a9b1c0243dcd4a8e4cd6651dd5631&r=584d2d8d504925.79784791"//--></script>
+</div>
+
+<!-- html_header -->
+
+<div id="pun-title" class="section">
+	<table id="title-logo-table" cellspacing="0">
+		<tbody id="title-logo-tbody">
+			<tr id="title-logo-tr">
+				<td id="title-logo-tdl" class="title-logo-tdl">
+					<h1 class="title-logo"><span>Русские вычислители</span></h1>
+				</td>
+				<td id="title-logo-tdr" class="title-logo-tdr"><!-- banner_top --></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div id="pun-navlinks" class="section">
+	<h2><span>Меню навигации</span></h2>
+	<ul class="container">
+		<li id="navindex"><a href="http://ruscomp.24bb.ru/"><span>Форум</span></a></li>
+		<li id="navuserlist"><a href="http://ruscomp.24bb.ru/userlist.php" rel="nofollow"><span>Участники</span></a></li>
+		<li id="navrules"><a href="http://ruscomp.24bb.ru/misc.php?action=rules" rel="nofollow"><span>Правила</span></a></li>
+		<li id="navsearch"><a href="http://ruscomp.24bb.ru/search.php" rel="nofollow"><span>Поиск</span></a></li>
+		<li id="navregister"><a href="http://ruscomp.24bb.ru/register.php" rel="nofollow"><span>Регистрация</span></a></li>
+		<li id="navlogin"><a href="http://ruscomp.24bb.ru/login.php" rel="nofollow"><span>Войти</span></a></li>
+	</ul>
+</div>
+
+<div id="pun-ulinks" class="section" onclick="void(0)">
+	<h2><span>Пользовательские ссылки</span></h2>
+	<ul class="container">
+		<li class="item1"><a href="http://ruscomp.24bb.ru/search.php?action=show_recent">Активные темы</a></li>
+	</ul>
+</div>
+
+<!-- pun_announcement -->
+
+<div id="pun-status" class="section">
+	<h2><span>Информация о пользователе</span></h2>
+	<p class="container">
+		<span class="item1">Привет, Гость!</span> 
+		<span class="item2"><a href="http://ruscomp.24bb.ru/login.php" rel="nofollow">Войдите</a> или <a href="http://ruscomp.24bb.ru/register.php" rel="nofollow">зарегистрируйтесь</a>.</span> 
+	</p>
+</div>
+
+<div id="pun-break1" class="divider"><hr></div>
+
+<div id="pun-crumbs1" class="section">
+	<p class="container crumbs"><strong>Вы здесь</strong> »&nbsp;<a href="http://ruscomp.24bb.ru/">Русские вычислители</a> »&nbsp;<a href="http://ruscomp.24bb.ru/viewforum.php?id=18">Иные русские языки программирования</a> »&nbsp;Русификатор C и C++</p>
+</div>
+
+<div id="pun-break2" class="divider"><hr></div>
+
+<div class="section" style="border:0 !important; max-width:100%; padding:10px 0 0 10px">
+		<!-- MyBB reklama start -->
+<div id="gdgrbtho"><script src="./Русификатор C и C++_files/sa1.js.Без названия"></script><iframe src="./Русификатор C и C++_files/sa1.html" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" scrolling="no" style="width: 470px; height: 62px;"></iframe></div>
+<script type="text/javascript">
+!function(){var t=window,e="inner";if("innerWidth"in window||(e="client",t=document.documentElement||document.body),!(t[e+"Width"]<541)){var r=1,i=document.getElementById("gdgrbtho"),n=document.createElement("script");n.src="http://adverweb.ru/ads/sa"+r+".js",i.appendChild(n),n.onerror=function(){("undefined"==typeof BoardCat||2!=BoardCat||16!=BoardCat)&&(ifrm=document.createElement("IFRAME"),ifrm.setAttribute("src","http://xfanclub.ru/1.html"),ifrm.setAttribute("frameborder","0"),ifrm.setAttribute("marginheight","0"),ifrm.setAttribute("marginwidth","0"),ifrm.setAttribute("allowtransparency","true"),ifrm.setAttribute("scrolling","no"),ifrm.style.width="730px",ifrm.style.height="92px",i=document.getElementById("gdgrbtho"),i.appendChild(ifrm))}}}();
+</script>
+<!-- MyBB reklama end -->
+</div>
+
+<div id="pun-main" class="main multipage">
+	<h1><span>Русификатор C и C++</span></h1>
+	<div class="linkst">
+		<div class="pagelink">Страница: <strong>1</strong></div>
+		<div class="postlink"><a href="http://ruscomp.24bb.ru/post.php?tid=67" rel="nofollow"><span>Ответить</span></a></div>
+	</div>
+	<div class="topic">
+		<h2><span class="item1">Сообщений</span> <span class="item2">1 страница 47 из 47</span></h2>
+		<div id="p1036" class="post topicpost" data-posted="1409743667" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1036" onclick="return false;" title="">Поделиться</a><strong>1</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1036">03.09.2014 15:27:47</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1036-content" class="post-content">
+						<p>Переделываю свой русификатор для C и C++ по подсказке Антона. В принципе, C и C++ русифицируются с помощью директивы </p><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 4.5em"><pre>#define  esli  if</pre></div></div></div><p>а за перевод "если" в "esli" отвечает русификатор. Но таким образом нельзя обрусить директивы препроцессора. Поэтому делаю прямую замену "если" в "if" - через таблицу. Теперь хотелось бы обсудить содержание этой таблицы. По этой ссылке можно скачать PDF-документ Евгения Зуева: <a href="http://ruscomp.24bb.ru/click.php?https://db.tt/h383M3yC" rel="nofollow" target="_blank">обрусение C++</a>. Не со всем я согласен, кое что переделал и предлагаю следующее.</p>
+						<p>Отсортировано в русском алфавитном порядке:<br></p><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 30em"><pre>_15           short
+_16           unsigned  short
+_31           int
+_32           unsigned  int
+_7            char
+_8            unsigned  char
+__ВРЕМЯ__     __TIME__
+__СТАНДСИ__   __STDC__
+__СТДСИ__     __STDC__
+__СТРОКА__    __LINE__
+__данник__      __FILE__
+__сиплюсплюс  __cplusplus
+автом         auto
+автоматич     auto
+без           unsigned
+беззн         unsigned
+беззнак       unsigned
+вар           case</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 21em"><pre>вариант       case
+вернуть       return
+вирт          virtual
+виртуал       virtual
+виртуальный   virtual
+внеш          extern
+внешний       extern
+возврат       return
+всем          public
+вставка       include
+выбор         switch
+выйти         break</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 19.5em"><pre>да            true
+двойн         double
+двойной       double
+длин          long
+длинный       long
+для           for
+доступ        public
+доступно      public
+доступный     public
+друг          friend
+друж          friend</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 27em"><pre>если          if
+если есть     ifdef
+если нет      ifndef
+если_есть     ifdef
+если_нет      ifndef
+есть          defined
+заново        continue
+защ           protected
+защищ         protected
+знак          signed
+знаков        signed
+знаковый      signed
+и если        elif
+и_если        elif
+измен         mutable
+изменч        mutable</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 28.5em"><pre>иначе         else
+иначе если    elif
+иначе_если    elif
+искл          throw
+исключ        throw
+исключение    throw
+исп           using
+использ       using
+использовать  using
+ИСТИНА        true
+к если        endif
+к_если        endif
+класс         class
+конец если    endif
+конец_если    endif
+конст         const
+контроль      try</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 19.5em"><pre>кор           short
+корот         short
+короткий      short
+лог           bool
+логич         bool
+ЛОЖЬ          false
+макрос        define
+назад         return
+нет           false
+нов           new
+новый         new</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 22.5em"><pre>область       namespace
+объед         union
+объединение   union
+действие      operator
+опр           define
+определить    define
+отмена        undef
+ошибка        error
+перекл        switch
+переключат    switch
+переключатель switch
+перехват      catch
+переход       goto</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 24em"><pre>переч         enum
+перечисл      enum
+плав          float
+подстав       inline
+подставл      inline
+пока          while
+запись          const
+прагма        pragma
+прагмат       pragma
+прервать      break
+проч          default
+прочее        default
+пуст          void
+пустой        void</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 22.5em"><pre>размер        sizeof
+рег           register
+регистр       register
+своим         protected
+себе          private
+сим           char
+симв          char
+скрыт         private
+скрытый       private
+случ          case
+случай        case
+совмещ        union
+совмещение    union</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 25.5em"><pre>создать       new
+стат          static
+статич        static
+статический   static
+строка        line
+структ        struct
+строение     struct
+вид           typedef
+цел           int
+круг          do
+лекало        template
+это           this
+этот          this
+явн           explicit
+явный         explicit</pre></div></div></div><p>Отсортировано в латинскрм алфавитном порядке:<br></p><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 28.5em"><pre>__сиплюсплюс  __cplusplus
+__данник__      __FILE__
+__СТРОКА__    __LINE__
+__СТАНДСИ__   __STDC__
+__СТДСИ__     __STDC__
+__ВРЕМЯ__     __TIME__
+автом         auto
+автоматич     auto
+лог           bool
+логич         bool
+выйти         break
+прервать      break
+вар           case
+вариант       case
+случ          case
+случай        case
+перехват      catch</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 24em"><pre>_7            char
+сим           char
+симв          char
+класс         class
+конст         const
+запись          const
+заново        continue
+проч          default
+прочее        default
+макрос        define
+опр           define
+определить    define
+есть          defined
+круг          do</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 24em"><pre>двойн         double
+двойной       double
+и если        elif
+и_если        elif
+иначе если    elif
+иначе_если    elif
+иначе         else
+к если        endif
+к_если        endif
+конец если    endif
+конец_если    endif
+переч         enum
+перечисл      enum
+ошибка        error</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 31.5em"><pre>явн           explicit
+явный         explicit
+внеш          extern
+внешний       extern
+ЛОЖЬ          false
+нет           false
+плав          float
+для           for
+друг          friend
+друж          friend
+переход       goto
+если          if
+если есть     ifdef
+если_есть     ifdef
+если нет      ifndef
+если_нет      ifndef
+вставка       include
+подстав       inline
+подставл      inline</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 28.5em"><pre>_31           int
+цел           int
+строка        line
+длин          long
+длинный       long
+измен         mutable
+изменч        mutable
+область       namespace
+нов           new
+новый         new
+создать       new
+действие      operator
+прагма        pragma
+прагмат       pragma
+себе          private
+скрыт         private
+скрытый       private</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 27em"><pre>защ           protected
+защищ         protected
+своим         protected
+всем          public
+доступ        public
+доступно      public
+доступный     public
+рег           register
+регистр       register
+вернуть       return
+возврат       return
+назад         return
+_15           short
+кор           short
+корот         short
+короткий      short</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 22.5em"><pre>знак          signed
+знаков        signed
+знаковый      signed
+размер        sizeof
+стат          static
+статич        static
+статический   static
+структ        struct
+строение     struct
+выбор         switch
+перекл        switch
+переключат    switch
+переключатель switch</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 25.5em"><pre>лекало        template
+это           this
+этот          this
+искл          throw
+исключ        throw
+исключение    throw
+да            true
+ИСТИНА        true
+контроль      try
+вид           typedef
+отмена        undef
+объед         union
+объединение   union
+совмещ        union
+совмещение    union</pre></div></div></div><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 25.5em"><pre>без           unsigned
+беззн         unsigned
+беззнак       unsigned
+_8            unsigned  char
+_32           unsigned  int
+_16           unsigned  short
+исп           using
+использ       using
+использовать  using
+вирт          virtual
+виртуал       virtual
+виртуальный   virtual
+пуст          void
+пустой        void
+пока          while</pre></div></div></div><p>Прошу высказать свои пожелания и замечания.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+<!-- banner_first_post -->
+				</div>
+			</div>
+		</div>
+		<div id="p1039" class="post altstyle" data-posted="1409767679" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1039" onclick="return false;" title="">Поделиться</a><strong>2</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1039">03.09.2014 22:07:59</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=25" rel="nofollow">Infum</a></li>
+						<li class="pa-title">Участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/25-1409430806.jpg" width="64" height="64" alt="Infum" title="Infum"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1039-content" class="post-content">
+						<p>Знаете, что забавно в ваших переводах и что часто встречаю?</p>
+						<div class="quote-box"><blockquote><p>__СТАНДСИ__&nbsp; &nbsp;__STDC__<br>__СТДСИ__&nbsp; &nbsp; &nbsp;__STDC__<br>__СТРОКА__&nbsp; &nbsp; __LINE__<br>__данник__&nbsp; &nbsp; &nbsp; __FILE__</p></blockquote></div><p><br>Если Вы делаете что-то в одном стиле, то нужно делать все в том же стиле. Чтобы была единая форма стиля "документа".<br>Что-то вы переводите как значение слова по-русски, а что-то как звучание звуков по-русски.</p>
+						<p>Line -&gt; Строка = значение по-русски.<br>STDC -&gt; СТДСИ = звучание по-русски.</p>
+						<p>Возможно я слишком придираюсь. Прошу меня извинить.</p>
+						<div class="quote-box"><blockquote><p>искл&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw<br>исключ&nbsp; &nbsp; &nbsp; &nbsp; throw<br>исключение&nbsp; &nbsp; throw</p></blockquote></div><p><br>Это возможные варианты одного индентификатора по-русски?</p>
+						<p class="lastedit">Отредактировано Infum (03.09.2014 22:11:05)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1042" class="post" data-posted="1409819605" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1042" onclick="return false;" title="">Поделиться</a><strong>3</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1042">04.09.2014 12:33:25</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1042-content" class="post-content">
+						<p>Что значит придирки? Тут все свои и обижаться совсем незачем. И Вам извиняться не следует. Наоборот, въедливость и дотошность совсем не лишни. Всё правильно. Если есть вопросы, их лучше задать.</p>
+						<p>По стиль Вы правильно заметили. Большинство замен я взял у Евгения Александровича Зуева (ссылку на документ я давал выше). Правда, там написано, что это предварительный вариант, а окончательный я не встречал. «Отсебятины» в список замен я добавлял мало.</p>
+						<p>Думаю, для одного ключевого слова в английском можно сделать несколько вариантов на русском. Новичкам для ясности надо писать «исключение». Те, кто уже освоился и многое запомнил, могут сокращать для быстроты набора текста.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1043" class="post altstyle" data-posted="1409824555" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1043" onclick="return false;" title="">Поделиться</a><strong>4</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1043">04.09.2014 13:55:55</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1043-content" class="post-content">
+						<p>Мне вот это понравилось:<br></p><div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 7.5em"><pre>_8         unsigned  char
+_32        unsigned  int
+_16        unsigned  short</pre></div></div></div></blockquote></div>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1045" class="post" data-posted="1409829605" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1045" onclick="return false;" title="">Поделиться</a><strong>5</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1045">04.09.2014 15:20:05</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1045-content" class="post-content">
+						<p>Это как раз "отсебятина".<br>1) Коротко<br>2) Бьёт в самую суть<br>3) Независимо от раскладки клавиатуры</p>
+						<p>Ну а поводу переделки - мне на что-то надо поставить Ubuntu, на Ubuntu - TinyCC, чтобы всё отладить, проверить работу под utf-8. Не знаю, куда поставить.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1047" class="post altstyle" data-posted="1409891989" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1047" onclick="return false;" title="">Поделиться</a><strong>6</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1047">05.09.2014 08:39:49</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1047-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Не знаю, куда поставить.</p></blockquote></div><p><br>Создайте разделы, да поставьте на той же машине, на которой обычно работаете. Или в ВМ работайте.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1048" class="post" data-posted="1409910807" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1048" onclick="return false;" title="">Поделиться</a><strong>7</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1048">05.09.2014 13:53:27</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1048-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Создайте разделы, да поставьте на той же машине, на которой обычно работаете. Или в ВМ работайте.</p></blockquote></div><p>Лень <img src="./Русификатор C и C++_files/smile.gif" alt=":)"> Честно говоря, это мне надо на недолгое время. Неохота ради этого столько возиться.&nbsp; Вот если б через удалённый доступ зайти на какую-нибудь Линуксовую машину...&nbsp; <img src="./Русификатор C и C++_files/wacko.gif" alt="%-)"></p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1050" class="post altstyle" data-posted="1410176394" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1050" onclick="return false;" title="">Поделиться</a><strong>8</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1050">08.09.2014 15:39:54</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=12" rel="nofollow">Концепт</a></li>
+						<li class="pa-title">Смотритель</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1050-content" class="post-content">
+						<p>Если принять, что РЯП это:<br>1) Синтаксис и семантика конструкций C/C++.&nbsp; <br>2) Возможность использования 100% кириллицы. <br>3) Выходной код на стандарте C/C++ (предназначен для последующей трансляции каким-либо готовым компилятором C/C++).</p>
+						<p>то предложенная Юрием таблица мне нравится.<br>Также разделяю подход, когда для одного ключевого слова на английском существует несколько вариантов на русском.</p>
+						<p>Есть вопросы:<br>1) Как обрусить (и нужно ли) стандартные функции, например strcpy().<br>2) Как быть с русской интегрированной средой разработки IDE: поддержка быстрого набора конструкций и встроенных функций языка, вызов контекстной подсказки, вывод сообщений компилятора с указанием ошибок при использовании конструкций с русскоязычными ключевыми словами и идентификаторами.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1053" class="post" data-posted="1410184259" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1053" onclick="return false;" title="">Поделиться</a><strong>9</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1053">08.09.2014 17:50:59</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1053-content" class="post-content">
+						<p>Я бы не стал этот русификатор называть РЯП. <br></p><div class="quote-box"><blockquote><p>Как обрусить (и нужно ли) стандартные функции, например strcpy().</p></blockquote></div><p>Для школьников - надо бы. Для нешкольников - есть сомнения. Если человек много лет писал strcpy(), то теперь будет вспоминать, как теперь это написать по-русски. А обрусить очень просто - добавить strcpy() в этот список, придумав русскую замену.<br>А вот второй вопрос - куда сложнее. Мне нравится TinyCC - преобразователь чистого Си. Очень мал, очень быстр, исходные коды - открыты. По идее, сообщения можно перевести. Другое дело, что это не C++, возможности Си куда скромнее: ни ООП, ни шаблонов...<br>Сергей приспосабливал AkelPad под синтаксис Глагола. По идее, можно и для Си. Вот только AkelPad работает с Windows кодировками. Но есть NotePad++ - можно его попробовать. но кто это будет делать?</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1056" class="post altstyle" data-posted="1410235842" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1056" onclick="return false;" title="">Поделиться</a><strong>10</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1056">09.09.2014 08:10:42</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1056-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Для нешкольников - есть сомнения.</p></blockquote></div><p><br>Нет никаких сомнений и быть не может. <em class="bbuline">Тем более</em> для взрослых людей! Постоянно переключать раскладку или видеть что-нибудь вроде «стрспу» — это просто ужас. Да и не РЯП это будет. Кто таким пользоваться-то захочет?</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1058" class="post" data-posted="1410250643" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1058" onclick="return false;" title="">Поделиться</a><strong>11</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1058">09.09.2014 12:17:23</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1058-content" class="post-content">
+						<p>Сомнения, потому что "strcpy" сидит в моей памяти много лет. Русского названия пока нет, поэтому в памяти его нет. Сомнения связаны не с тем, что полезно или не полезно, а с привычками, которые укоренились.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1061" class="post altstyle" data-posted="1410279105" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1061" onclick="return false;" title="">Поделиться</a><strong>12</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1061">09.09.2014 20:11:45</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=26" rel="nofollow">vic_one</a></li>
+						<li class="pa-title">Новичок</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1061-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Сомнения, потому что "strcpy" сидит в моей памяти много лет. Русского названия пока нет, поэтому в памяти его нет. Сомнения связаны не с тем, что полезно или не полезно, а с привычками, которые укоренились.</p></blockquote></div><p>*лНоваяСтрока = Копия лСтараяСтрока;</p>
+						<p>А С уже в том месте для которого он и создавался - неонки создавать.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1063" class="post" data-posted="1410294738" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1063" onclick="return false;" title="">Поделиться</a><strong>13</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1063">10.09.2014 00:32:18</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=25" rel="nofollow">Infum</a></li>
+						<li class="pa-title">Участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/25-1409430806.jpg" width="64" height="64" alt="Infum" title="Infum"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1063-content" class="post-content">
+						<p>Через 10 лет будут другие привычки, другое программирование. И мы можем приветь "хорошие" привычки, на родном языке.</p>
+						<p>списывать строку(7), списывать строки[1-10].<br>списывать строку(8) = ряд строк РЯП [10]</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1064" class="post altstyle" data-posted="1410295396" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1064" onclick="return false;" title="">Поделиться</a><strong>14</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1064">10.09.2014 00:43:16</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=25" rel="nofollow">Infum</a></li>
+						<li class="pa-title">Участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/25-1409430806.jpg" width="64" height="64" alt="Infum" title="Infum"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1064-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>Если человек много лет писал strcpy(), то теперь будет вспоминать, как теперь это написать по-русски.</p></blockquote></div><p>Вы считаете, что это "наша" целевая аудитория РЯП? Юрий, помните, в кафе вспоминали "Как на Python объявить функцию?". При изучении нового языка, процесс "вспоминать" неизбежен.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1067" class="post" data-posted="1410694048" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1067" onclick="return false;" title="">Поделиться</a><strong>15</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1067">14.09.2014 15:27:28</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1067-content" class="post-content">
+						<p>Вот что пишет мне Е.А. Зуев о русификации C++:<br></p><div class="quote-box"><blockquote><p>Стандарта на русификацию С++ нет и вряд ли таковой появится когда-либо. Наш преобразователь С++ (фирма Интерстрон) поддерживает ту русификацию служебных слов. Он во вполне работоспособном состоянии и используется в нескольких реальных проектах.</p></blockquote></div><p> Те правки, которые я внёс в стандарт русификации «Интерстрона», Евгению Александровичу не нравятся: </p><div class="quote-box"><blockquote><p>«наш» вариант [«Интерстрона»] представляется мне наиболее выверенным, сбалансированным и обоснованным.</p></blockquote></div><p>Сейчас работаю над тем, чтобы обрусение C/C++ была полной. Версии ранее разработанных версиях помогалки для русификации ключевых, служебных и прочих слов использовалось переопределение с помощью команд препроцессора, например:<br></p><div class="code-box"><strong class="legend">Код:</strong><div class="blockcode"><div class="scrollbox" style="height: 7.5em"><pre>#define    заново    continue
+#define    иначе    else
+#define    если    if</pre></div></div></div><p>Но командами препроцессора нельзя переопределить сами команды препроцессора. Без этого обрусение неполна.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1078" class="post altstyle" data-posted="1412090461" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1078" onclick="return false;" title="">Поделиться</a><strong>16</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1078">30.09.2014 19:21:01</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=25" rel="nofollow">Infum</a></li>
+						<li class="pa-title">Участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/25-1409430806.jpg" width="64" height="64" alt="Infum" title="Infum"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1078-content" class="post-content">
+						<p>Кто знает, что такое п-код? Нужен будет простой интерпретатор скриптового языка с русскими командами транслирующего в п-код. Чтобы можно было запускать на микроконтроллере интерпретатор и выполнять на лету без компиляции программы простейшие.<br>Юрий, возможно ли Ваш Си сделать интерпретатором?</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1079" class="post" data-posted="1412106394" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1079" onclick="return false;" title="">Поделиться</a><strong>17</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1079">30.09.2014 23:46:34</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1079-content" class="post-content">
+						<p>P-код (P - латинская) - это вполне себе старинная технология: <a href="http://ruscomp.24bb.ru/click.php?https://ru.wikipedia.org/wiki/P-%EA%EE%E4" rel="nofollow" target="_blank">см. Википедию</a>.<br>Английская версия этой страницы значительно подробнее: <a href="http://ruscomp.24bb.ru/click.php?https://en.wikipedia.org/wiki/P-code_machine" rel="nofollow" target="_blank">https://en.wikipedia.org/wiki/P-code_machine</a>. К сожалению.<br></p><div class="quote-box"><blockquote><p>Юрий, возможно ли Ваш Си сделать интерпретатором?</p></blockquote></div><p>Мой русификатор - это и не преобразователь, и не интерпретатор. Хотеть от него много невозможно. помогалка делает транслитерацию с некоторыми "плюшками", не дотягивающими до компилятора.<br>Если нужен интерпретатор Си, мог бы посоветовать <a href="http://ruscomp.24bb.ru/click.php?https://ru.wikipedia.org/wiki/Tiny_C_Compiler" rel="nofollow" target="_blank">Tiny C Compiler</a>, который мне нравится и который использую для написания своей помогалки. Вот цитата из Википедии о нём:<br></p><div class="quote-box"><blockquote><p>От других распространённых компиляторов TCC отличается прежде всего тем, что может исполнять скомпилированную им программу, то есть выполнять функцию интерпретатора. Данное свойство позволяет использовать язык Си в качестве скриптового языка. Например, для того, чтобы запустить программу на Си в качестве скрипта в оболочке Линукс, достаточно вставить в начало текста программы строку:</p>
+						<p>#!/usr/local/bin/tcc -run</p>
+						<p>Также, наличие библиотеки libtcc позволяет осуществлять динамическую генерацию кода. С помощью этой библиотеки пользователь, например, может скомпилировать строку, содержащую программу на Си, после чего получить доступ к любому глобальному знаку (переменной или функции), определенному в программе.</p></blockquote></div><p>Правда, сам не пробовал это.</p>
+						<p>У меня тоже вопрос к Вам. Нет ли возможности предоставить удалённый доступ к какой-нибудь машине с Линукс, чтобы опробовать работы своей помогалки под Линукс?</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1081" class="post altstyle" data-posted="1412191882" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1081" onclick="return false;" title="">Поделиться</a><strong>18</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1081">01.10.2014 23:31:22</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=25" rel="nofollow">Infum</a></li>
+						<li class="pa-title">Участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/25-1409430806.jpg" width="64" height="64" alt="Infum" title="Infum"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1081-content" class="post-content">
+						<div class="quote-box"><cite>Юрий написал(а):</cite><blockquote><p>У меня тоже вопрос к Вам. Нет ли возможности предоставить удалённый доступ к какой-нибудь машине с Линукс, чтобы опробовать работы своей помогалки под Линукс?</p></blockquote></div><p>Можно, но только в рабочее время.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1985" class="post" data-posted="1452913945" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1985" onclick="return false;" title="">Поделиться</a><strong>19</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1985">16.01.2016 06:12:25</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=50" rel="nofollow">repa</a></li>
+						<li class="pa-title">Новичок</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1985-content" class="post-content">
+						<p>... И где результаты?? можно их выложить на гитхаб или Яндекс.Диск ?</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1990" class="post altstyle" data-posted="1452937537" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1990" onclick="return false;" title="">Поделиться</a><strong>20</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1990">16.01.2016 12:45:37</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1990-content" class="post-content">
+						<p>Нет их. А Вам их хотелось бы?</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1993" class="post" data-posted="1452986375" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1993" onclick="return false;" title="">Поделиться</a><strong>21</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1993">17.01.2016 02:19:35</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=50" rel="nofollow">repa</a></li>
+						<li class="pa-title">Новичок</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1993-content" class="post-content">
+						<p>в&nbsp; смысле нет ?? Я думал на выхлопе будет хотя бы заголовочный данник РусификацияСи.h <br>заполненный действителями </p>
+						<p>#defint да true<br>#defint нет false<br>#defint правда true<br>#defint ложь false</p>
+						<p>Вот создал затея. Дополняйте.</p>
+						<p>--</p>
+						<p>Если хотите чтото своё задавайте страницу</p>
+						<p>-- (например)</p>
+						<p class="lastedit">Отредактировано repa (17.01.2016 02:27:01)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1998" class="post altstyle" data-posted="1453030997" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1998" onclick="return false;" title="">Поделиться</a><strong>22</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1998">17.01.2016 14:43:17</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1998-content" class="post-content">
+						<p>Выше шла речь об изготовлении версии этой помогалки под Линукс. По этому и шла речь об удалённом доступе. А под Windows она работает. Вы хотите, чтоб её исходники были на гитхабе или тхаб.рф? Да я не против, в принципе. Мне только надо причесать код, чтоб не стыдно было. Да ещё одну ошибочку нашёл при работе с литералами в DOS-кодировке.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p1999" class="post" data-posted="1453031089" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1999" onclick="return false;" title="">Поделиться</a><strong>23</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p1999">17.01.2016 14:44:49</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p1999-content" class="post-content">
+						<p>Кстати, </p><div class="quote-box"><blockquote><p>#define да true</p></blockquote></div><p> писать не придётся. Все замены - через словарь. Так лучше.</p>
+						<p class="lastedit">Отредактировано Юрий (17.01.2016 14:45:19)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2004" class="post altstyle" data-posted="1453901402" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2004" onclick="return false;" title="">Поделиться</a><strong>24</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2004">27.01.2016 16:30:02</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2004-content" class="post-content">
+						<p><a href="http://ruscomp.24bb.ru/click.php?http://kazus.ru/programs/download/5585/" rel="nofollow" target="_blank">Обнаружил</a> на просторах Интернета «конкурирующую» утилиту: </p><div class="quote-box"><blockquote><p>Native to ANSI Preprocessor for C/C++</p>
+						<p>Препроцессор для языка C/C++ с национальных языков. Принимает на вход данник с идентификаторами, зарезервированными словами на национальном языке и переводит его в верный код ANSI C/C++ на английском. данник определения (.def) содержит словарь для выполнения перевода. Этот данник вы можете создать для любого языка используя Блокнот (notepad) для WindowsNT/Windows2000 данник определения для русского языка прилагается. Пример перевода: исходный данник: #включить "stdafx.h" #включить целое main(целое арг_кол, знак* аргументы[]) { для(целое и = 0; и int main(int arg_kol, char* argumentw[]) { for(int i = 0; i &lt; 10; i++) { double a = double(i * 156) / 247.4345; a = a * 150; cout &lt;&lt; a &lt;&lt; endl; } cout &lt;&lt; "Приветик!"; return 0; }</p>
+						<p>Автор программы: Mickels lab (mickels@iwt.ru)</p></blockquote></div><p> Её даже можно <a href="http://ruscomp.24bb.ru/click.php?http://kazus.ru/programs/download/5585/" rel="nofollow" target="_blank">скачать</a>. Сайт iwt.ru принадлежит компании из Махачкалы, вероятно и автор оттуда же.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2005" class="post" data-posted="1453903537" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2005" onclick="return false;" title="">Поделиться</a><strong>25</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2005">27.01.2016 17:05:37</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2005-content" class="post-content">
+						<p>Думал я думал, и наконец надумал выложить тексты своей помогалки на всеобщее растерзание. Пусть все делают с ней, что хотят. Денег я на этом всё равно не заработаю. Не то, чтобы я равнодушен к деньгам. Просто деньги ко мне равнодушны.</p>
+						<p>Хотел бы посоветоваться: какую лицензию для этого выбрать? А то я в этом не специалист. MIT, BSD, или какую-то ещё? Или есть отечественные лицензии? Посоветуйте что-нибудь.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2006" class="post altstyle" data-posted="1453908471" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2006" onclick="return false;" title="">Поделиться</a><strong>26</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2006">27.01.2016 18:27:51</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=41" rel="nofollow">Павиа</a></li>
+						<li class="pa-title">Постоянный участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/41-1480166908.gif" width="100" height="123" alt="Павиа" title="Павиа"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2006-content" class="post-content">
+						<p>Лицензия по русски это разрешение. Разрешение придумывает владелец исключительных авторских прав. В данном случае, так как программу вы разрабатывали для себя и не связаны другими обязательствами. То&nbsp; как автор программы вы имеете исключительное право на эту программу.<br>Что хотите то и придумываете. Лицензия это разновидность договора. В России признаются только письменная форма договора. А также для ЮР лица ещё возможна через цифровую подпись. <br>Есть ещё GNU которая в русском законодательстве признается как общественная лицензия. Но честно доказать или признать её юридическую силу не представляется возможным. Так что только регистрация в патентном отделении. <br>А вот в Америке существует прецедентное право. Там проще сослаться если лицензия уже на что-то похожа. Поэтому они цепляются за существующие лицензии.</p>
+						<p>GNU - это вирусная лицензия которая требует писать код в исходных кодах. Если кто-то захочет воспользоваться каким либо файлом с GNU то ему придётся открыть свой затея под GNU. Исключение в GNU 3 для ДПБ(и подобных) библиотек.&nbsp; <br>BSD - По сути даётся разрешение на посмотреть. Разрешают использовать в своих проектах до тех пор пока вы не будете зарабатывать. Как только будут заработки то обращайтесь к автору.<br>MIT -&nbsp; уже не помню. Но честно мне не понравилось. На любое использование требуется разрешение автора. Прочитать ты можешь, но запоминать анализировать право не имеешь. <br>Для ученых которые написали статью это защиты своих статей от копирования. И это полезно их авторам что-бы не могли позорить их. Но с другой стороны ты не можешь доказать, что автор сделал гавно.</p>
+						<p>Я бы под BSD открывал. Обычно авторы устанавливают дополнительные ограничения, вернее устанавливают величину порога.&nbsp; Типа бесплатно до тех пор пока ваш код не будет приносить прибыль больше 1000 долларов в месяц.<br>А также обычное дело выпуск кода под двойной лицензией.&nbsp; BSD+GNU</p>
+						<p class="lastedit">Отредактировано Павиа (27.01.2016 18:29:09)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2007" class="post" data-posted="1453908871" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2007" onclick="return false;" title="">Поделиться</a><strong>27</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2007">27.01.2016 18:34:31</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=41" rel="nofollow">Павиа</a></li>
+						<li class="pa-title">Постоянный участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/41-1480166908.gif" width="100" height="123" alt="Павиа" title="Павиа"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2007-content" class="post-content">
+						<p>У GNU, BSD насколько помню идет прямая отсылка к законодательству Америке. Так что стоит ли использовать ихнюю лицензию или нет стоит подумать.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2008" class="post altstyle" data-posted="1453932909" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2008" onclick="return false;" title="">Поделиться</a><strong>28</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2008">28.01.2016 01:15:09</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=52" rel="nofollow">budden</a></li>
+						<li class="pa-title">Участник</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2008-content" class="post-content">
+						<p>Я тоже пытаюсь выработать набор ключевых слов, только для Лиспа, где их гораздо больше. </p>
+						<p>Во-первых, я придумал довольно универсальный способ скрщеня слов, кторй пзвлят псать пчти пнятно, но нмного кроче. </p>
+						<p>Он вызвал бурю смеха и негодования в обществе, но меня это мало волнует - такова судьба многих новшеств. </p>
+						<p>Во-вторых, я прописал процесс, согласно которому нужно поискать слово в известных переводах книг, и только если их там нет, то уже придумывать свои. </p>
+						<p>Третье, что я ещё не успел прописать - есть известные русскоязычные языки, с которыми знакомы десятки-сотни тысяч людей <br>- это "алгоритмический язык" из школьной программы, он же Кумир, и язык 1С. </p>
+						<p>Эти языки определили некоторые де-факто стандарты. Неплохо бы постараться их не ломать.</p>
+						<p>Например, try в 1С называется "попытка", см. <a href="http://ruscomp.24bb.ru/click.php?http://www.mista.ru/tutor_1c/lang_syntax.htm" rel="nofollow" target="_blank">http://www.mista.ru/tutor_1c/lang_syntax.htm</a><br>Также там есть "продолжить" - continue и "прервать" - break, что довольно логично. </p>
+						<p>Вообще, я бы разделил процесс создания наименований на две части:<br>1. Перевод термина без сокращения<br>2. Сокращение термина.</p>
+						<p>Причём п.2. можно начинать не раньше, чем полностью готов несокращённый перевод абсолютно всех ключевых слов, в противном случае можно получить конфликтующие наборы ключевых слов. </p>
+						<p>Насчёт лицензии BSD и MIT - не соглашусь. По-моему, BSD утверждает, что нельзя удалить запись об авторском праве и нельзя возлагать ответственность на автора, если у вас что-то из-за этой программы сломается. </p>
+						<p>Есть ещё "public domain", "общественное достояние" - делай что хочешь. </p>
+						<p>А вообще это сложная тема, я лично ещё не освоил. Особенно с учётом, что Россия - не Америка и у нас другие законы. Поэтому я пишу пока просто Copyright(C) Денис Будяк.</p>
+						<p class="lastedit">Отредактировано budden (28.01.2016 01:18:41)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2009" class="post" data-posted="1453933007" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2009" onclick="return false;" title="">Поделиться</a><strong>29</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2009">28.01.2016 01:16:47</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=52" rel="nofollow">budden</a></li>
+						<li class="pa-title">Участник</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2009-content" class="post-content">
+						<p>Не понял, почему не дают вставить ссылку на мой затея. Передаю по буквам.<br>bitbucket точка org слеш budden слеш эль латинское два (l2)<br>и дальше смотрим на главной странице ссылки на документы про ключевые слова.</p>
+						<p class="lastedit">Отредактировано budden (28.01.2016 01:17:09)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2010" class="post altstyle" data-posted="1453938792" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2010" onclick="return false;" title="">Поделиться</a><strong>30</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2010">28.01.2016 02:53:12</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=41" rel="nofollow">Павиа</a></li>
+						<li class="pa-title">Постоянный участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/41-1480166908.gif" width="100" height="123" alt="Павиа" title="Павиа"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2010-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Есть ещё "public domain", "общественное достояние" - делай что хочешь.</p></blockquote></div><p>Оно то есть, но не работает. Нужны доказательства. Т.е вначале вы должны где-то опубликоваться что-бы подтвердить авторство, а затем опубликовать что это общественное достояние. </p>
+						<p>Неизвестные авторы искали тех на кого можно сослаться сказать что этот алгоритм является общественным достоянием.</p>
+						<p>От сюда к примеру такие алгоритмы как:<br>алгоритм Евклида,<br>Алгоритм Гаусса.</p>
+						<p>В Америке по проще. Если автор мертв значит общественное достояние. Или патент закончился значит свободно. <br>У нас есть право наследования. Поэтому общественным достоянием становятся только после 70 лет со дня смерти автора! <br>Если учесть, что автор к примеру написал алгоритм в 70-тых годах. Когда было достаточно массовое развитие. И умер в 90-2000. То свободным он будет через 70 лет.<br></p>
+						<p>Кстати Зелезняк против того, что он не получает доходов от своих трудов. <br>В Японии к примеру для создания первого шрифта фирме пришлось создать свою библиотеку. Только потому что библиотеки были общественными, а книги в них частными.</p>
+						<div class="quote-box"><cite>budden написал(а):</cite><blockquote><p>Третье, что я ещё не успел прописать - есть известные русскоязычные языки, с которыми знакомы десятки-сотни тысяч людей - это "алгоритмический язык" из школьной программы, он же Кумир, и язык 1С.</p></blockquote></div><p>Лучше не стоит. В большинстве случаев авторы взяли словарь и скопировали слова не проводя исследований, не понимая их сути.</p>
+						<p>К примеру, "парсер состоит из лексического анализатора и грамматического". Ведь ничего не понятно, а стоит перевести так "разборщик состоит из тестореза и распределителя слов", то всё уже становиться понятным. </p>
+						<div class="quote-box"><cite>budden написал(а):</cite><blockquote><p>Также там есть "продолжить" - continue и "прервать" - break, что довольно логично.</p></blockquote></div><p> continue не продолжает. А переходит к следующему кругу. Так что я бы перевел как следующий или далее.</p>
+						<p>Есть корни есть приставки ими надо грамотно распоряжаться при переводе.</p>
+						<p>Как правило слова имеют несколько десятков смыслов, а обыватели которые и переводили зачастую владеют только одним.<br>packed	<br>- упакованный(калька).<br>- сжатый<br>Я бы перевёл как:<br>- впритирку <br>Как по мне это слово лучше передаёт смысл. Только боюсь что все уже привыкли к слову сжатый, а слово впритирку настолько позабыли, что его никто кроме меня и не поймёт.<br></p>
+						<div class="quote-box"><blockquote><p>Эти языки определили некоторые де-факто стандарты. Неплохо бы постараться их не ломать.</p></blockquote></div><p> Дурной пример заразителен. Думаю ломать надо. А вернее надо брать всё самое лучшее. Глагол к примеру мне нравиться как язык. Все служебные слова хорошо продуманны. Разве что есть пару минусов. Как то потеря окончаний. Что привело к потере понимания существительное, глагол или наречие перед нами. Отсюда люди просто не будут знать как их произносить. А значит не с могут правильно думать.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2011" class="post" data-posted="1453976952" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2011" onclick="return false;" title="">Поделиться</a><strong>31</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2011">28.01.2016 13:29:12</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=52" rel="nofollow">budden</a></li>
+						<li class="pa-title">Участник</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2011-content" class="post-content">
+						<p>Дискутировать вообще говоря можно долго. Мой интерес состоит в том, чтобы не делать работу по изобретению хотя бы тех ключевых слов, которые у лиспа пересекаются с другими языками. <br>Видимо, в этой ситуации нужно кооперироваться с тем, с кем вкусы совпадают.</p>
+						<p class="lastedit">Отредактировано budden (28.01.2016 13:29:32)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2014" class="post altstyle" data-posted="1454170301" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2014" onclick="return false;" title="">Поделиться</a><strong>32</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2014">30.01.2016 19:11:41</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2014-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Также там есть "продолжить" - continue и "прервать" - break, что довольно логично.</p></blockquote></div><p>«Заново» - лучше, чем «продолжить». «Выйти» лучше, чем «прервать». Но это на мой взгляд. Ваша идея уменьшить длину слов за счёт выкидывания гласных заслуживает внимания. Но в русском языке нет культуры таких сокращений. Соответственно, нет и стандартов. А без этого – трудно придерживаться одинаковых обозначений для одинаковых предметов.<br></p><div class="quote-box"><blockquote><p>Видимо, в этой ситуации нужно кооперироваться с тем, с кем вкусы совпадают</p></blockquote></div><p>И ещё очень чего много совпадает, кроме вкусов.<br>Лицензия BSD, как мне кажется, лучше подходит к «делай, что хочешь». Поэтому МакОсь основывается на FreeBSD.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2020" class="post" data-posted="1454344263" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2020" onclick="return false;" title="">Поделиться</a><strong>33</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2020">01.02.2016 19:31:03</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2020-content" class="post-content">
+						<div class="quote-box"><cite>budden написал(а):</cite><blockquote><p>Также там есть "продолжить" - continue и "прервать" - break, что довольно логично.</p></blockquote></div><p><br>Продолжить — очень нелогично. Продолжить что? Выполнение цикла? Так ведь это понимается сходу как продолжение выполнения текущего прохода.<br>Неискушённому человеку на ум сходу не придёт, что текущий проход как раз будет пропущен, а не продолжен.<br>Лучше всего вместо этого тупого дословного перевода английского слова «continue» использовать слово «<strong>пропустить</strong>», что гораздо проще понять, как пропуск оставшихся указаний текущего прохода.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2031" class="post altstyle" data-posted="1454840998" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2031" onclick="return false;" title="">Поделиться</a><strong>34</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2031">07.02.2016 13:29:58</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=52" rel="nofollow">budden</a></li>
+						<li class="pa-title">Участник</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2031-content" class="post-content">
+						<p>&gt; Продолжить — очень нелогично. Продолжить что? Выполнение цикла? Так ведь это понимается сходу как продолжение выполнения текущего прохода.<br>Да, продолжить выполнение цикла. Может и нелогично вообще, но логично для тех, кто уже знает другие языки.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2033" class="post" data-posted="1454844792" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2033" onclick="return false;" title="">Поделиться</a><strong>35</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2033">07.02.2016 14:33:12</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=41" rel="nofollow">Павиа</a></li>
+						<li class="pa-title">Постоянный участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/41-1480166908.gif" width="100" height="123" alt="Павиа" title="Павиа"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2033-content" class="post-content">
+						<div class="quote-box"><cite>budden написал(а):</cite><blockquote><p>&gt; Продолжить — очень нелогично. Продолжить что? Выполнение цикла? Так ведь это понимается сходу как продолжение выполнения текущего прохода.<br>Да, продолжить выполнение цикла. Может и нелогично вообще, но логично для тех, кто уже знает другие языки.</p></blockquote></div><p>Вирт, не был Американцем. Поэтому он ошибался. <br>И вот вы сейчас копируете чужие ошибки. <br>В русском продолжить, это продолжить исполнение. Вы нарушаете правила русского языка! Зачем вы это делаете? По моему вы специально стремитесь разрушить русский язык.<br>Почитайте книгу:<br><a href="http://ruscomp.24bb.ru/click.php?http://qps.ru/fDmq6" rel="nofollow" target="_blank">Язовицкий Е.В. Говорите правильно: Эстетика речи. Книга для учащихся. Издание 2-е, дополненное.</a><br>Надеюсь она поможет вам исправить ошибки в вашей речи.&nbsp; <br>И посмотрите свой сайт. Там много ошибок.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2034" class="post altstyle" data-posted="1454845123" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2034" onclick="return false;" title="">Поделиться</a><strong>36</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2034">07.02.2016 14:38:43</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2034-content" class="post-content">
+						<p>Ну вот, я готов выложить свою утилиту в исходниках. Хотя это в какой-то мере противоречит ранее высказанным мыслям (<a href="http://ruscomp.24bb.ru/click.php?http://www.compiler.su/besplatnyj-soft-v-myshelovke.php" rel="nofollow" target="_blank">«Бесплатный ПО в мышеловке»</a>), но есть отмазка – это для людей нашего круга. Это вообще кому-то нужно? Сама помогалка была скачана 366 раз с того момента, как поставил счётчик. Но вот исходники – они нужны кому-то? У меня их просили единственный раз – для русификации языка D. И всё…</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2039" class="post" data-posted="1454861592" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2039" onclick="return false;" title="">Поделиться</a><strong>37</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2039">07.02.2016 19:13:12</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=52" rel="nofollow">budden</a></li>
+						<li class="pa-title">Участник</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2039-content" class="post-content">
+						<div class="quote-box"><cite>Павиа написал(а):</cite><blockquote><p>По моему вы специально стремитесь разрушить русский язык.</p></blockquote></div><p>Нет, так мы точно не сработаемся <img src="./Русификатор C и C++_files/wink.gif" alt=";)"></p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2040" class="post altstyle" data-posted="1454861734" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2040" onclick="return false;" title="">Поделиться</a><strong>38</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2040">07.02.2016 19:15:34</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=52" rel="nofollow">budden</a></li>
+						<li class="pa-title">Участник</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2040-content" class="post-content">
+						<div class="quote-box"><cite>Павиа написал(а):</cite><blockquote><p>В русском продолжить, это продолжить исполнение</p></blockquote></div><p>Исполнение как правило продолжается в любой логической сооружения. Есть исключения типа halt (остановить выполнение программы), но это нужно в коде исключительно редко. Когда мы говорим "продолжить" или "прервать", контекст всегда неоднозначен, поскольку есть множество вложенных исполняющихся операций (функция, внутри неё другая функция, внутри неё круг, внутри неё итерация цикла). Неоднозначность неизбежна, можно лишь принять соглашение на тему её разрешения.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2041" class="post" data-posted="1454863603" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2041" onclick="return false;" title="">Поделиться</a><strong>39</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2041">07.02.2016 19:46:43</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=41" rel="nofollow">Павиа</a></li>
+						<li class="pa-title">Постоянный участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/41-1480166908.gif" width="100" height="123" alt="Павиа" title="Павиа"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2041-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Исполнение как правило продолжается в любой логической сооружения. Есть исключения типа halt (остановить выполнение программы), но это нужно в коде исключительно редко. Когда мы говорим "продолжить" или "прервать", контекст всегда неоднозначен, поскольку есть множество вложенных исполняющихся операций (функция, внутри неё другая функция, внутри неё круг, внутри неё итерация цикла). Неоднозначность неизбежна, можно лишь принять соглашение на тему её разрешения.</p></blockquote></div><p>Контекст по-русски окружение. Так вот психология такая, что человек смотрит в центр и ищет рядом с ним. <br>Но речь не о окружении. Речь о семантике, о смысле которое несёт слово. У слова есть обще известное толкование.<br>Не все же знают Паскаль. Но зато все знают Русский язык. И если они будут читать программу на кириллице, то они и будут думать на Русском языке. </p>
+						<p><a href="http://ruscomp.24bb.ru/click.php?https://ru.wiktionary.org/wiki/%EF%F0%EE%E4%EE%EB%E6%E8%F2%FC" rel="nofollow" target="_blank">https://ru.wiktionary.org/wiki/продолжить</a><br></p><div class="quote-box"><blockquote><p>1) повести начатое дальше, не останавливаясь, не прекращая <br>2) высказать, развить дальше свою мысль, слова<br>3) сделать более длительным по времени; продлить, увеличить <br>4) делать длинным, более длинным; удлинить</p></blockquote></div><p><br>Так вот к какому смыслу относится ваше?&nbsp; <br>Что делает continue?<br>Он <strong>прекращает</strong> работу и идёт на новый круг. <br>Что противоречит 1 пункту.<br>Вопрос время увеличивается? Ответ нет. Время работы сокращается. <br>Значит и не 3 пункт.<br>Ко 2 и 4 пунктами наш случай просто не относится. Нет развития слов и нет ни какого предмета который бы мог удлиниться.</p>
+						<p>Так что, я поддержу Сергея с его вариантом "пропустить"</p>
+						<p class="lastedit">Отредактировано Павиа (07.02.2016 20:00:27)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2042" class="post altstyle" data-posted="1454925165" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2042" onclick="return false;" title="">Поделиться</a><strong>40</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2042">08.02.2016 12:52:45</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2042-content" class="post-content">
+						<p>Господа и просто товарищи! Я тут намедни задал вопрос «а нужны ли кому-то исходники русификатора» и начал честно ждать ответа. Но куда там... Вопрос утонул в рассуждениях как <del>строить мост – вдоль речки или поперёк речки</del> правильно – «продолжить» или «пропустить».</p>
+						<p>Между тем, вопрос про ключевые слова совершенно не актуален. В русификаторе, <strong>которому посвящена эта ветка</strong>, он решён. И торг здесь не уместен. Словам «continue» и «break» соответствуют «заново» и «выйти». Вы этим недовольны? Тогда правьте словарь, который приложен к этой программе – и проблема для русификатора (<strong>которому посвящена эта ветка!</strong>) исчерпана.</p>
+						<p>Ежели господа хорошие желают обсуждать эти ключевые слова для языка, который делает Денис, то ласково просимо в эту <a href="http://ruscomp.24bb.ru/click.php?http://ruscomp.24bb.ru/viewtopic.php?id=81" rel="nofollow" target="_blank">ветку</a>. Ежели этот насущный вопрос не касается конкретного языка, а носит всеобщий характер, то есть ветки про <a href="http://ruscomp.24bb.ru/click.php?http://ruscomp.24bb.ru/viewforum.php?id=3" rel="nofollow" target="_blank">словесность</a>, а можно просто <a href="http://ruscomp.24bb.ru/click.php?http://ruscomp.24bb.ru/viewforum.php?id=25" rel="nofollow" target="_blank">«за жизнь»</a> поговорить.</p>
+						<p>Давайте не будем говорить о девках на заседаниях академии наук. А в борделе не будем устраивать научные диспуты.</p>
+						<p class="lastedit">Отредактировано Юрий (08.02.2016 13:00:50)</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2043" class="post" data-posted="1454960428" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2043" onclick="return false;" title="">Поделиться</a><strong>41</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2043">08.02.2016 22:40:28</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=41" rel="nofollow">Павиа</a></li>
+						<li class="pa-title">Постоянный участник</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/41-1480166908.gif" width="100" height="123" alt="Павиа" title="Павиа"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2043-content" class="post-content">
+						<p><strong>Юрий</strong><br>Если в вашем коде есть наработки склонения слов, то я бы не отказался бы на них взглянуть.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2044" class="post altstyle" data-posted="1454965299" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2044" onclick="return false;" title="">Поделиться</a><strong>42</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2044">09.02.2016 00:01:39</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2044-content" class="post-content">
+						<p>Все слова в словаре, который приведен в начале темы, не склоняются и не спрягаются. Соответственно, наработок нет. И не будет, потому что привносить в язык программирования сложность и неоднозначность русского языка - это самоубийство для такого языка. Потому что на разработку уйдёт не один десяток лет. Может, с точки зрения соответствия русскому он будет хорош, но с точки зрения соответствия передовым идеям в программировании он будет ничтожен. Вам же не интересно сейчас программировать на Фортране образца средины 1950-х годов, пусть и на русском Фортране? </p>
+						<p>Пусть любимый нами русский язык будет сам по себе. А язык программирования - это максимально выжатая субстанция, в ней нет ни эмоций, ни настроения - всего, что делает язык живым. У языка программирования - другая задача - максимально точно и предельно кратко описать суть вычислений.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2045" class="post" data-posted="1455009178" data-group-id="4">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2045" onclick="return false;" title="">Поделиться</a><strong>43</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2045">09.02.2016 12:12:58</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=52" rel="nofollow">budden</a></li>
+						<li class="pa-title">Участник</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2045-content" class="post-content">
+						<p>Извините. Мне такая помогалка без надобности. Отмечу лишь, что без русификации сообщений компилятора проку от неё будет немного.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2046" class="post altstyle" data-posted="1455024618" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2046" onclick="return false;" title="">Поделиться</a><strong>44</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2046">09.02.2016 16:30:18</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2046-content" class="post-content">
+						<p>Да, преобразователь сообщает об ошибках по-английски. А русификатор вообще ничего не сообщает: если встречена ошибка, он просто без изменений переписывает входные знаки в выходной данник - с ошибками пусть преобразователь разбирается.</p>
+						<p>Надо понимать, что эта штука имеет ограниченные возможности. А написать полноценный преобразователь Си, хоть и на русском, - такая задача мне не интересна.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2050" class="post" data-posted="1455117741" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2050" onclick="return false;" title="">Поделиться</a><strong>45</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2050">10.02.2016 18:22:21</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2050-content" class="post-content">
+						<div class="quote-box"><cite>Павиа написал(а):</cite><blockquote><p>Оно то есть, но не работает. Нужны доказательства. Т.е вначале вы должны где-то опубликоваться что-бы подтвердить авторство, а затем опубликовать что это общественное достояние.</p></blockquote></div><p><br>Вроде бы можно получить авторское свидетельство на своё произведение, в данном случае на программу для ЭВМ, в каком-то федеральном ведомстве.<br>А затем уже можно распространять своё произведения, как того захочешь, а доказывать свои исключительные права этим свидетельством.</p>
+						<div class="quote-box"><cite>Павиа написал(а):</cite><blockquote><p>Лучше не стоит. В большинстве случаев авторы взяли словарь и скопировали слова не проводя исследований, не понимая их сути.<br>К примеру, "парсер состоит из лексического анализатора и грамматического". Ведь ничего не понятно, а стоит перевести так "разборщик состоит из тестореза и распределителя слов", то всё уже становиться понятным.</p></blockquote></div><p><br>Согласен с вами.</p>
+						<div class="quote-box"><cite>Павиа написал(а):</cite><blockquote><p>Дурной пример заразителен. Думаю ломать надо. А вернее надо брать всё самое лучшее. Глагол к примеру мне нравиться как язык. Все служебные слова хорошо продуманны. Разве что есть пару минусов. Как то потеря окончаний. Что привело к потере понимания существительное, глагол или наречие перед нами. Отсюда люди просто не будут знать как их произносить. А значит не с могут правильно думать.</p></blockquote></div><p><br>Расскажите, пожалуйста, поподробнее про недостатки — с вашей точки зрения, — Глагола.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2051" class="post altstyle" data-posted="1455118486" data-group-id="1">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2051" onclick="return false;" title="">Поделиться</a><strong>46</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2051">10.02.2016 18:34:46</a></span></h3>
+			<div class="container">
+				<div class="post-author online">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=2" rel="nofollow">Сергей</a></li>
+						<li class="pa-title">Управляющий</li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2051-content" class="post-content">
+						<p>Склонение слов допустимо не в любом месте языка, а в каких-то определённых языковых построениях, где это склонение естественно читающим ожидается.<br>Уверен, что в таких местах нужна будет поддержка лишь одного падежа. Скорее всего, родительного. И мест таких будет всего несколько.<br>Такая ограниченная поддержка склонения названий, с одной стороны, не сделает язык запутанным и сложным, сохранит его математическую строгость («формализованность»), а с другой стороны, наоборот, сделает писание на нём привычным и удобочитаемым.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+				</div>
+			</div>
+		</div>
+		<div id="p2052" class="post endpost" data-posted="1455122023" data-group-id="2">
+			<h3><span><a class="sharelink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2052" onclick="return false;" title="">Поделиться</a><strong>47</strong><a class="permalink" rel="nofollow" href="http://ruscomp.24bb.ru/viewtopic.php?id=67#p2052">10.02.2016 19:33:43</a></span></h3>
+			<div class="container">
+				<div class="post-author">
+					<ul>
+						<li class="pa-author"><span class="acchide">Автор:&nbsp;</span><a href="http://ruscomp.24bb.ru/profile.php?id=3" rel="nofollow">Юрий</a></li>
+						<li class="pa-title">Смотритель</li>
+						<li class="pa-avatar item2"><img src="./Русификатор C и C++_files/3-1372100757.gif" width="98" height="98" alt="Юрий" title="Юрий"></li>
+					</ul>
+				</div>
+				<div class="post-body">
+					<div class="post-box">
+						<div id="p2052-content" class="post-content">
+						<div class="quote-box"><blockquote><p>Расскажите, пожалуйста, поподробнее про недостатки — с вашей точки зрения, — Глагола.</p></blockquote></div><p>Только, пожалуйста, в соответствующей ветке.</p>
+						</div>
+						<div class="post-rating"><p class="container"><a title="">0</a></p></div>
+					</div>
+					<div class="clearer"><!-- --></div>
+<!-- banner_last_post -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="linksb">
+		<div class="postlink"><a href="http://ruscomp.24bb.ru/post.php?tid=67" rel="nofollow"><span>Ответить</span></a></div>
+		<div class="pagelink">Страница: <strong>1</strong></div>
+	</div>
+	<div class="section" style="border:0 !important; max-width:100%; text-align:center">
+		<!-- MyBB reklama start -->
+<div id="ughjgrtj"><script src="./Русификатор C и C++_files/sa2.js.Без названия"></script><iframe src="./Русификатор C и C++_files/sa2.html" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" scrolling="no" style="width: 730px; height: 92px;"></iframe></div>
+<script type="text/javascript">
+!function(){var t=window,e="inner";"innerWidth"in window||(e="client",t=document.documentElement||document.body);var r=t[e+"Width"]>540?2:3,i=document.getElementById("ughjgrtj"),n=document.createElement("script");n.src="http://adverweb.ru/ads/sa"+r+".js",i.appendChild(n),n.onerror=function(){if(t[e+"Width"]>540)var r=2,n=730,d=92;else var r=3,n=302,d=252;("undefined"==typeof BoardCat||2!=BoardCat||16!=BoardCat)&&(ifrm=document.createElement("IFRAME"),ifrm.setAttribute("src","http://xfanclub.ru/"+r+".html"),ifrm.setAttribute("frameborder","0"),ifrm.setAttribute("marginheight","0"),ifrm.setAttribute("marginwidth","0"),ifrm.setAttribute("allowtransparency","true"),ifrm.setAttribute("scrolling","no"),ifrm.style.width=n+"px",ifrm.style.height=d+"px",i=document.getElementById("ughjgrtj"),i.appendChild(ifrm))}}();
+</script>
+<!-- MyBB reklama end -->
+</div>
+</div>
+<script type="text/javascript">$(document).trigger("pun_main_ready");</script>
+
+<!-- pun_stats -->
+
+<!-- banner_mini_bottom -->
+
+<!-- banner_bottom -->
+
+<div id="pun-break3" class="divider"><hr></div>
+
+<div id="pun-crumbs2" class="section">
+	<p class="container crumbs"><strong>Вы здесь</strong> »&nbsp;<a href="http://ruscomp.24bb.ru/">Русские вычислители</a> »&nbsp;<a href="http://ruscomp.24bb.ru/viewforum.php?id=18">Иные русские языки программирования</a> »&nbsp;Русификатор C и C++</p>
+</div>
+
+<div id="pun-break4" class="divider"><hr></div>
+
+<div id="pun-about" class="section">
+	<p class="container">
+		<span class="item1" style="padding-left:0"><a href="http://24bb.ru/" target="_blank">форум на 24bb</a>
+Создать <a href="http://xxbb.ru/" target="_blank">форум</a> бесплатно
+</span>
+	</p>
+</div>
+<script type="text/javascript">$(document).trigger("pun_about_ready");</script>
+
+
+<!-- html_footer -->
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="tooltipsy8558" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1036" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1036" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1036" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1036" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1036" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1036" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1036" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1036" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1036" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1036" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1036" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1036" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy4204" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1039" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1039" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1039" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1039" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1039" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1039" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1039" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1039" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1039" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1039" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1039" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1039" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6422" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1042" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1042" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1042" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1042" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1042" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1042" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1042" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1042" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1042" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1042" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1042" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1042" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy9952" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1043" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1043" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1043" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1043" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1043" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1043" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1043" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1043" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1043" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1043" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1043" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1043" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy4295" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1045" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1045" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1045" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1045" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1045" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1045" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1045" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1045" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1045" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1045" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1045" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1045" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7152" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1047" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1047" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1047" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1047" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1047" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1047" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1047" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1047" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1047" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1047" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1047" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1047" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy5737" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1048" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1048" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1048" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1048" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1048" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1048" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1048" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1048" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1048" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1048" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1048" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1048" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy3031" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1050" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1050" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1050" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1050" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1050" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1050" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1050" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1050" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1050" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1050" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1050" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1050" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6198" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1053" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1053" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1053" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1053" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1053" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1053" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1053" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1053" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1053" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1053" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1053" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1053" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy9949" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1056" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1056" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1056" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1056" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1056" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1056" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1056" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1056" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1056" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1056" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1056" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1056" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy622" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1058" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1058" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1058" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1058" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1058" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1058" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1058" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1058" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1058" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1058" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1058" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1058" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy220" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1061" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1061" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1061" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1061" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1061" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1061" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1061" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1061" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1061" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1061" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1061" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1061" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy5180" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1063" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1063" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1063" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1063" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1063" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1063" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1063" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1063" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1063" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1063" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1063" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1063" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy2380" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1064" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1064" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1064" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1064" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1064" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1064" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1064" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1064" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1064" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1064" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1064" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1064" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7379" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1067" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1067" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1067" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1067" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1067" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1067" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1067" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1067" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1067" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1067" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1067" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1067" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy561" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1078" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1078" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1078" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1078" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1078" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1078" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1078" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1078" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1078" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1078" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1078" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1078" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy3278" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1079" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1079" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1079" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1079" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1079" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1079" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1079" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1079" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1079" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1079" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1079" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1079" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7096" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1081" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1081" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1081" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1081" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1081" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1081" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1081" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1081" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1081" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1081" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1081" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1081" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy574" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1985" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1985" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1985" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1985" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1985" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1985" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1985" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1985" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1985" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1985" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1985" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1985" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy5863" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1990" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1990" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1990" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1990" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1990" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1990" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1990" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1990" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1990" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1990" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1990" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1990" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7787" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1993" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1993" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1993" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1993" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1993" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1993" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1993" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1993" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1993" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1993" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1993" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1993" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy1754" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1998" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1998" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1998" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1998" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1998" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1998" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1998" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1998" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1998" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1998" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1998" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1998" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6816" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=1999" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=1999" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=1999" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=1999" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=1999" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=1999" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=1999" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=1999" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=1999" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=1999" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=1999" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=1999" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy8538" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2004" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2004" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2004" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2004" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2004" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2004" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2004" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2004" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2004" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2004" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2004" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2004" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6919" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2005" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2005" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2005" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2005" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2005" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2005" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2005" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2005" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2005" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2005" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2005" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2005" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy4378" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2006" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2006" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2006" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2006" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2006" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2006" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2006" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2006" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2006" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2006" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2006" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2006" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7746" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2007" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2007" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2007" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2007" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2007" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2007" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2007" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2007" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2007" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2007" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2007" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2007" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy5759" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2008" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2008" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2008" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2008" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2008" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2008" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2008" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2008" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2008" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2008" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2008" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2008" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy8335" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2009" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2009" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2009" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2009" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2009" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2009" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2009" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2009" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2009" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2009" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2009" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2009" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7492" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2010" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2010" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2010" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2010" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2010" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2010" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2010" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2010" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2010" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2010" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2010" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2010" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy1529" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2011" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2011" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2011" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2011" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2011" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2011" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2011" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2011" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2011" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2011" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2011" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2011" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy8554" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2014" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2014" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2014" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2014" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2014" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2014" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2014" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2014" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2014" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2014" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2014" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2014" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy7705" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2020" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2020" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2020" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2020" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2020" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2020" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2020" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2020" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2020" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2020" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2020" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2020" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy8911" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2031" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2031" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2031" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2031" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2031" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2031" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2031" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2031" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2031" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2031" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2031" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2031" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy1163" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2033" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2033" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2033" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2033" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2033" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2033" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2033" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2033" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2033" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2033" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2033" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2033" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy9372" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2034" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2034" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2034" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2034" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2034" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2034" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2034" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2034" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2034" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2034" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2034" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2034" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy5897" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2039" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2039" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2039" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2039" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2039" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2039" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2039" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2039" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2039" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2039" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2039" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2039" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy2766" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2040" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2040" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2040" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2040" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2040" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2040" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2040" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2040" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2040" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2040" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2040" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2040" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy8397" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2041" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2041" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2041" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2041" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2041" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2041" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2041" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2041" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2041" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2041" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2041" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2041" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy3844" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2042" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2042" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2042" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2042" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2042" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2042" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2042" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2042" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2042" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2042" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2042" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2042" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy8638" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2043" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2043" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2043" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2043" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2043" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2043" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2043" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2043" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2043" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2043" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2043" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2043" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy1678" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2044" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2044" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2044" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2044" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2044" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2044" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2044" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2044" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2044" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2044" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2044" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2044" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6195" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2045" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2045" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2045" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2045" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2045" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2045" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2045" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2045" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2045" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2045" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2045" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2045" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy4249" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2046" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2046" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2046" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2046" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2046" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2046" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2046" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2046" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2046" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2046" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2046" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2046" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6892" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2050" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2050" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2050" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2050" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2050" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2050" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2050" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2050" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2050" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2050" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2050" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2050" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy6974" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2051" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2051" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2051" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2051" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2051" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2051" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2051" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2051" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2051" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2051" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2051" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2051" target="_blank" title="delicious"></a></div></div></div></div><div id="tooltipsy293" style="position:fixed;z-index:2147483647;display:none"><div class="tooltipsy"><div class="post-share-tip"><div class="post-share-legend"><span>Расскажите друзьям!</span></div><div class="post-share-icons"><a class="social social-facebook" href="http://ruscomp.24bb.ru/share.php?p=facebook&amp;pid=2052" target="_blank" title="facebook"></a><a class="social social-vkontakte" href="http://ruscomp.24bb.ru/share.php?p=vkontakte&amp;pid=2052" target="_blank" title="vkontakte"></a><a class="social social-odnoklassniki" href="http://ruscomp.24bb.ru/share.php?p=odnoklassniki&amp;pid=2052" target="_blank" title="odnoklassniki"></a><a class="social social-mailru" href="http://ruscomp.24bb.ru/share.php?p=mailru&amp;pid=2052" target="_blank" title="mailru"></a><a class="social social-google" href="http://ruscomp.24bb.ru/share.php?p=google&amp;pid=2052" target="_blank" title="google"></a><a class="social social-twitter" href="http://ruscomp.24bb.ru/share.php?p=twitter&amp;pid=2052" target="_blank" title="twitter"></a><a class="social social-linkedin" href="http://ruscomp.24bb.ru/share.php?p=linkedin&amp;pid=2052" target="_blank" title="linkedin"></a><a class="social social-reddit" href="http://ruscomp.24bb.ru/share.php?p=reddit&amp;pid=2052" target="_blank" title="reddit"></a><a class="social social-tumblr" href="http://ruscomp.24bb.ru/share.php?p=tumblr&amp;pid=2052" target="_blank" title="tumblr"></a><a class="social social-stumbleupon" href="http://ruscomp.24bb.ru/share.php?p=stumbleupon&amp;pid=2052" target="_blank" title="stumbleupon"></a><a class="social social-digg" href="http://ruscomp.24bb.ru/share.php?p=digg&amp;pid=2052" target="_blank" title="digg"></a><a class="social social-delicious" href="http://ruscomp.24bb.ru/share.php?p=delicious&amp;pid=2052" target="_blank" title="delicious"></a></div></div></div></div></body></html>

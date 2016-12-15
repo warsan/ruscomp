@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0654)http://udsp-eu.exe.bid/web/files/linked/1078/html5creative/1480417762-8779_20393/snippet?ic_id=cc1c058b-f7c7-4f5c-a260-290a0f2839a6&creative_id=20393&win_price=2.55&click3rd=http%3A%2F%2Fads.betweendigital.com%2Fclick%2FAblW4RE8qMv9uw7V5p3-x1le7yQYTaKtbdbjFR8sSeGxn2-IEb4QHefPyG3CSgejHrJoa39BvHxKOzug90Nfkvl2JihxdfbfevqJ8Sr26I7KCxpZSnDdBUjcviwtOYo-s-7L-nKki4aDYVvYmfJPp4Qv3kSTSpkl-MoR9bJhYG08JGNpzyuRuwtgtZEnipxuocF5CEla1pYnuyk0ta0ryVoUTWX9A8lLI55kLiIYHTdxOVMlkqiHxpgfenhq13egCbQHdLBst.5.n1NwCmd.Rv6UCU12aWygUotwq.f4DpqCUigqCUskp0HqtnU4qDQlm8embmYEEk9VosnH0T8InxPmGC39BcdOjA7rD6LaodoxM.nTU6qtKaYFnSWwaWLG49TM.SLvXYyiB4YDA2wgsTzEdNJ9of9-64UAMg%3D%3D%2F%2F -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ad.size" content="width=728,height=90">
+<title>index</title>
+<!-- write your code here -->
+<script src="./lib.js.Без названия"></script>
+<script src="./index.js.Без названия"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	// --- write your JS code here ---
+	canvas = document.getElementById("canvas");
+	images = images||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt) {
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.index();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="background-color:#D4D4D4;margin:0px;" marginwidth="0" marginheight="0">
+<img height="1px" width="1px" border="0" style="position:absolute" src="./imp"><img height="1px" width="1px" border="0" style="position:absolute;" src="./redot.gif">
+<a href="http://ads.betweendigital.com/click/AblW4RE8qMv9uw7V5p3-x1le7yQYTaKtbdbjFR8sSeGxn2-IEb4QHefPyG3CSgejHrJoa39BvHxKOzug90Nfkvl2JihxdfbfevqJ8Sr26I7KCxpZSnDdBUjcviwtOYo-s-7L-nKki4aDYVvYmfJPp4Qv3kSTSpkl-MoR9bJhYG08JGNpzyuRuwtgtZEnipxuocF5CEla1pYnuyk0ta0ryVoUTWX9A8lLI55kLiIYHTdxOVMlkqiHxpgfenhq13egCbQHdLBst.5.n1NwCmd.Rv6UCU12aWygUotwq.f4DpqCUigqCUskp0HqtnU4qDQlm8embmYEEk9VosnH0T8InxPmGC39BcdOjA7rD6LaodoxM.nTU6qtKaYFnSWwaWLG49TM.SLvXYyiB4YDA2wgsTzEdNJ9of9-64UAMg==//http%3A%2F%2Fudsp-eu.exe.bid%2Fclick%3Fic_id%3Dcc1c058b-f7c7-4f5c-a260-290a0f2839a6%26cid%3D20393%26lid%3D12683" target="_blank">
+	<canvas id="canvas" width="728" height="90" style="background-color:rgba(255, 255, 255, 1.00)"></canvas>
+	</a>
+
+
+</body></html>

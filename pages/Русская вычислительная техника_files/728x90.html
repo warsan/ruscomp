@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(1197)http://content.targetix.net/Hybrid/55280C26764C737A4B076E1253FEA282/728x90.html?cu=http://dsa.targetix.net/?_TDWgajqgclFb3vgLYdIb1mUQrfeaPl6u8JPG2vzdLA7wWD8lM4tJuGIt.RuSW3d.Qti4ELntBL.9KZXDHAwJmgg8MGuEWvq7iQRd4ejEe4WGyx6G4gfwiv1LccV3.hVOF5H1nGHivur98kPSITtft1ds53TCvUELzMo_1uIIv5HTxLLAqPW0rXEpzaGM5zF6LhIiWVF9e4uATgKoKmqprJTbmQjSJyNhrPtLl7WitODQvf5Nkop_MktHrxm75zx7h3bXDGLkCnXBk_92INmFG3Q3uvScLskMwaADYavM.wNYpokwrPB1n6Yqa0YFnEC3AFU2uuIHG37M65879N.4s2zd8okLP82MHbH6ARXG.Qa._BWtvYcM3ofAbqKfqhaJykViYSH5JpUvdyalNCWZhjX2miIAgWGRF.TV3T08_Y9D3UnQQ2q2RqklTLqGg0ZEoKOba3kUOGCvZRnPdodWCwPuwAfeVBfUxojX9T8.j43iUgamEhC_.dc30gms3GPQ_ucSFG4F60CNZVLdTwATgGFUsIwsXsDeMfk2zA1EGqFEOik70PMVtRKzg4VDygehNbfCFfNITguC4.80U5xwe1W0XAOnGGJ6DlDAObk12M6ZGrcfkwShgM6mvX7YoMhvctlV__sWGjdkhxriPcPRNcKm7A1DclpRosHv34oBdngZok_AMRDUYMMn8I8Un0fKfKv7PFvIB9GS3sBWMY0EI6_Z8fGO6qeYE5UI2Wc.k7hRGVVc6lOvZauef9rtNt.L1ycE_6PGl431zNfV.aro3NGEBdS92Xt01nU3Q5YP.Tp5YGcrXYXfsSeF1kiIpHn7zOm7K2wref8jfKNAqhBB1CeQB7ofjNN_AtjOa3Q7afnP2X5KcluTqlvWU3j38L4k3hueG5XZpwygwK28WhhqYlYkASJd8YN_5P0XQHmir4hK0K9c229qhrVGHboqiOi4_sYJ35IarSqI75bu_tls3dYVgP2rPo6Vord54iJFK7ymSulOwFCegkEXMKDXll8xzQoqDS4yUnzusKqq3m49c.T8Tm2XFYba9RfK4GNtIjK0oqIgS3eWJvjPhSGUraOz -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ad.size" content="width=728,height=90">
+<title>728x90</title>
+<!-- write your code here -->
+
+
+<script src="./createjs-2015.11.26.min.js.Без названия"></script>
+<script src="./728x90.js.Без названия"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	// --- write your JS code here ---
+	
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete(evt) {
+	exportRoot = new lib._728x90();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+</script>
+
+<!-- write your code here -->
+
+<script type="text/javascript">
+var clickTag = "";
+</script>
+<style type="text/css">
+    body {
+        cursor: pointer;
+    }
+</style><script>
+    window._tx = window._tx || {};
+    window._tx.handleClick = function () {
+        var cu;
+        (function (q) {
+            var i = Math.max(q.indexOf("?cu="), q.indexOf("&cu="));
+            cu = q.substring(i + 4);
+        })(window.location.href);
+        if (cu && cu.length !== 0) {
+            var checkUA = function (v) {
+                return window.navigator.userAgent.indexOf(v) != -1;
+            };
+            if (window.navigator && window.navigator.standalone && (checkUA("iPhone") && !checkUA("iPod") && !checkUA("iPad") || checkUA("iPad") || checkUA("iPod"))) {
+                var a = window.document.createElement("a");
+                a.setAttribute("href", cu);
+                a.setAttribute("target", "_blank");
+                var e = window.document.createEvent("MouseEvent");
+                e.initMouseEvent("click", true, true, window, 1);
+                a.dispatchEvent(e);
+            } else {
+                window.open(cu, "_blank", "");
+            }
+        }
+    };
+</script></head>
+<body vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="0" onload="init();" style="background-color:#D4D4D4;margin:0px;" onclick="window._tx.handleClick();">
+	<a>
+<canvas id="canvas" width="726" height="88" style="background-color: rgb(255, 255, 255); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;"></canvas>
+</a>
+
+         <script>
+        // Код обновления цвета рамки 
+            ;
+            (function() {
+                var __canvas = document.getElementById('canvas');
+                __canvas.width = __canvas.width - 2;
+                __canvas.height = __canvas.height - 2;
+                __canvas.style.borderColor = window['BannerBorder'] || '#000000';
+                __canvas.style.borderWidth = '1px';
+                __canvas.style.borderStyle = 'solid';
+
+                initListeners.push(function() {
+                    if (window['BannerBorder']) {
+                        __canvas.style.borderColor = window['BannerBorder'];
+                    }
+                })
+            })();
+        </script>
+
+
+</body></html>

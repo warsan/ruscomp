@@ -1,0 +1,256 @@
+
+<!-- saved from url=(0036)http://spb.bid.run/multisync/?ssp=17 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kavanga Sync</title>
+</head>
+<body marginwidth="0" marginheight="0">
+
+<script type="text/javascript" src="./sync.js.Без названия"></script>
+<script type="text/javascript">
+    var expires = 86400 * 3,
+        ssp = parseQueryString()["ssp"] || null,
+        randSyncId = +(new Date) + '-' + Math.round(Math.random() * 99999) ; // Количество секунд до следующего обновления пикселей
+
+    var storage = {};
+    initStorage();
+
+    // Проверяем, можно ли синкать?
+    if (canSync()) {
+        var kui1v = storage.getCookie('kui1v') || '', b64_kui1v;
+
+        if (!kui1v) {
+            // Пробуем поставить куку
+            loadImage(document, document.body, '//dsp.kavanga.ru/sync/?redirect_to=%2F%2Fspb.bid.run%2Fsync%2F', function(e) {
+                // Пробуем еще разок получить куку
+                kui1v = storage.getCookie('kui1v') || '';
+
+                if (kui1v) {
+                    init();
+                } else {
+                    // Морозим
+                    storage.setCookie("sync-freeze", 1, 86400);
+                }
+            });
+        } else {
+            init();
+        }
+    }
+
+    function canSync() {
+        return (!storage.getCookie("sync-freeze")) && ((!storage.getCookie("sync-id") || (storage.getCookie("sync-id") == randSyncId)));
+    }
+
+    function init() {
+        if (!canSync()) {
+            return;
+        }
+
+        storage.setCookie("sync-id", randSyncId, 3);
+
+        b64_kui1v = base64(kui1v);
+        var p = storage.getItems("pixel-partners") || {}, _updated = false, _n = {}, cnt = 0;
+        for (var i in partners) {
+            if ((partners.hasOwnProperty(i)) && (typeof p[i] == 'undefined')) {
+                if (((i != 27) || (partners[i].crc)) && ((i != 1002) || ((ssp) && (ssp != 2)))) {
+                    if (++cnt <= 3) {
+                        loadImage(document, document.body, partners[i]);
+                        _n[i] = "";
+                        _updated = true;
+                    }
+                }
+            }
+        }
+
+        if (_updated) {
+            storage.setItems("pixel-partners", _n);
+
+            if (cnt > 3) {
+                setTimeout(init, 5000);
+            }
+        }
+    }
+
+    function loadImage(d, b, addr, callback) {
+        if (typeof addr == 'object') {
+            var type = addr.type || 'their';
+            var crc = addr.crc || '';
+            addr = addr.url;
+        }
+
+        if (typeof addr != 'string') {
+            return;
+        }
+
+        var aUC = addr.toUpperCase(),
+                protocol = document.location.protocol.toUpperCase();
+
+        if ((protocol == 'HTTPS:') && ((aUC.indexOf("HTTP:") == 0))) {
+            return;
+        }
+
+        // ToDo решить что делать с type == 'our'
+        if ((type == 'their') || (true)) {
+            var replaceList = {
+                '$KAVANGA_UUID$'    : kui1v,
+                '$KAVANGA_UUID_B64$': b64_kui1v,
+                '$YA_SIGN$'         : crc
+            };
+
+            for (var i in replaceList) {
+                if (replaceList.hasOwnProperty(i)) {
+                    addr = addr.replace(i, replaceList[i]);
+                }
+            }
+        }
+
+        var now = +new Date;
+        addr = addr.replace(/\$RANDOM\$/, now);
+
+        if ((aUC.indexOf("HTTP") == 0) || (aUC.indexOf("//") == 0)) {
+            try {
+                var img = d.createElement('IMG');
+
+                if (typeof callback == 'function') {
+                    img.onerror = callback;
+                    img.onload = callback;
+                }
+
+                img.style.position = 'absolute';
+                img.style.width = '0px';
+                img.style.height = '0px';
+                b.insertBefore(img, b.firstChild);
+
+                img.src = addr;
+            } catch(e){}
+        }
+    }
+
+    function initStorage() {
+        storage = {
+            setCookie : function(key, value, exp) {
+                var date = new Date();
+                date.setTime(date.getTime() + exp * 1000);
+
+                document.cookie = key + "=" + value + "; expires=" + date.toGMTString() + ";domain=.bid.run;path=/multisync/";
+            },
+
+            setItems : function(key, value, exp) {
+                var items = storage.getItems(key);
+                for(var i in value) {
+                    if (value.hasOwnProperty(i)) {
+                        items[i] = true;
+                    }
+                }
+
+                var res = [];
+                for(i in items) {
+                    if (items.hasOwnProperty(i)) {
+                        res.push(i);
+                    }
+                }
+
+                storage.setCookie(key, res.join(','), expires);
+            },
+
+            getCookie : function(key) {
+                var nameEQ = key + "=",
+                        ca = document.cookie.split(';');
+
+                for(var i=0;i < ca.length;i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') {
+                        c = c.substring(1, c.length);
+                    }
+
+                    if (c.indexOf(nameEQ) === 0) {
+                        return c.substring(nameEQ.length, c.length) || null;
+                    }
+                }
+
+                return null;
+            },
+
+            getItems : function(key) {
+                var vars = {},
+                    items = this.getCookie(key) || '';
+
+                if (items.length) {
+                    items = items.split(',');
+                    for(var i = 0; i < items.length; i++) {
+                        vars[items[i]] = "";
+                    }
+                }
+
+                return vars;
+            }
+        };
+    }
+
+    function base64(input) {
+        if (!input) {
+            return '';
+        }
+
+        var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+        var output = "";
+        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        while (i < input.length) {
+
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+
+            output = output + keyStr.charAt(enc1) + keyStr.charAt(enc2) + keyStr.charAt(enc3) + keyStr.charAt(enc4);
+        }
+
+        return output;
+    }
+
+    function parseQueryString() {
+        var qs = window.location.href;
+        var result = {};
+
+        var args = qs.substr(qs.indexOf('?') + 1).replace("+", " ").split('&');
+        for (var i = 0; i < args.length; i++) {
+            var pair = args[i].split('=');
+            var name = decodeURIComponent(pair[0]);
+            var value = "";
+
+            try {
+                value = (pair.length == 2)
+                        ? decodeURIComponent(pair[1])
+                        : "";
+            } catch(e) {
+                value = "";
+            }
+
+            if (typeof result[name] == "undefined") {
+                result[name] = value;
+            } else if (result[name] instanceof Array) {
+                result[name].push(value);
+            } else {
+                result[name] = [result[name].valueOf(), value];
+            }
+        }
+
+        return result;
+    }
+
+</script>
+
+
+</body></html>

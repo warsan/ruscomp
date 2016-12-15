@@ -1,0 +1,311 @@
+/** Fuction bind() definition **/
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function (oThis) {
+    if (typeof this !== "function") {
+      // closest thing possible to the ECMAScript 5 internal IsCallable function
+      throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+    }
+ 
+    var aArgs = Array.prototype.slice.call(arguments, 1), 
+        fToBind = this, 
+        fNOP = function () {},
+        fBound = function () {
+          return fToBind.apply(this instanceof fNOP && oThis
+                                 ? this
+                                 : oThis,
+                               aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+ 
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+ 
+    return fBound;
+  };
+}
+
+/******************************************************************************************
+ * @library RCounter
+ ******************************************************************************************/
+function RCounter(counterId, settings) 
+{
+	settings = settings || {};
+	this.step      = 1;
+	if(typeof counterId == "object") {
+		this.counterId = 0;
+		this.settings  = counterId;	
+	} else {
+		this.counterId = counterId;
+		this.settings  = settings;
+	}
+}
+
+RCounter.prototype.getUrl = function()
+{
+	if(this.settings.pix) {
+		var src = '//counter.e-contenta.com/?pix=' + this.settings.pix;
+	} else {
+		var src = '//counter.e-contenta.com/?' + (this.counterId ? 'id=' + this.counterId : '');
+	}
+	src += '&referrer=' + this.getReferrer() + '&location=' + this.getLocation();
+	if(this.settings.retargeting) {
+		var query = ''
+		var tmp_index = 0;
+		for (var offer_id in this.settings.retargeting) {
+			tmp_index++;
+			query += offer_id
+			if(this.settings.retargeting[offer_id].length) {
+				for(var i = 0; i < this.settings.retargeting[offer_id].length; i++) {
+					query += ':' + this.settings.retargeting[offer_id][i]
+				}
+			}
+
+			if(tmp_index == this.settings.retargeting.length) {
+				query += '|'
+			}
+		}
+
+		if(query) {
+			src += '&retargeting=' + query
+		}
+
+	}
+	return src;
+}
+
+
+RCounter.prototype.getReferrer = function()
+{
+	return encodeURIComponent(document.referrer);
+}
+
+
+RCounter.prototype.getLocation = function()
+{
+	return encodeURIComponent(location.href);
+}
+
+
+RCounter.prototype.checked = function()
+{
+	var image = document.getElementById('rcounter-' + this.counterId)
+	if(!image) {
+		return true;
+	}
+
+	return false;
+}
+
+
+RCounter.prototype.load = function()
+{
+	if(this.checked()) {
+		document.write('<img width="1" height="1" id="rcounter-' + this.counterId + '" src="' + this.getUrl() + '&' + Math.random() + '">');
+		setTimeout('RCounter.reloadToTime(' + this.counterId + ', "' + this.getUrl() + '", 1)', 3000);
+	}
+}
+
+
+RCounter.reloadToTime = function(counterId, url, step)
+{
+	var image = document.getElementById('rcounter-' + counterId);
+	image.src = url + '&action=time&' + Math.random();
+
+	var time = 60000
+	if (step == 1) {
+		time = 10000
+		step += 1
+	}
+
+	setTimeout('RCounter.reloadToTime(' + counterId + ', "' + url + '", ' + step + ')', time);
+}
+
+
+RCounter.load = function(counterId, settings) 
+{
+	var counter = new RCounter(counterId, settings);
+	counter.load();
+}
+
+
+/******************************************************************************************
+ * @library RRoller
+ ******************************************************************************************/
+function RRoller(placeId, json)
+{
+ this.placeId = placeId;
+ this.json    = json;
+ if(this.json.setting && !this.json.setting.id) {
+  this.json.setting.id = 'x' + Math.round(Math.random() * 100000000);
+ }
+}
+
+RRoller.prototype.setCookie = function(name, value, path, expires, domain, secure) {
+	  document.cookie = name + "=" + escape(value) +
+		((expires) ? "; expires=" + expires : "") +
+		((path) ? "; path=" + path : "") +
+		((domain) ? "; domain=" + domain : "") +
+		((secure) ? "; secure" : "");
+}
+
+RRoller.prototype.getCookie = function(name) {
+  var cookie = " " + document.cookie;
+  var search = " " + name + "=";
+  var setStr = null;
+  var offset = 0;
+  var end = 0;
+  if (cookie.length > 0) {
+	offset = cookie.indexOf(search);
+	if (offset != -1) {
+	  offset += search.length;
+	  end = cookie.indexOf(";", offset)
+	  if (end == -1) {
+		end = cookie.length;
+	  }
+	  setStr = unescape(cookie.substring(offset, end));
+	}
+  }
+
+  return(setStr);
+}
+
+/**
+Компилирует html/js шаблон data (String)
+**/
+RRoller.prototype.tmpl = function tmpl(data){
+    var fn = new Function("obj",
+        "var p=[], print = function() { p.push.apply(p,arguments);};" +
+       
+        // Сделать данные доступными локально при помощи with(){}
+        "with(obj){p.push('" +
+       
+        /* Превращаем шаблон в чистый JavaScript */
+		data
+			.replace(/[\r\t\n]/g, " ") 
+			.replace(/'(?=[^%]*%>)/g,"\t") 
+			.split("'").join("\\'") 
+			.split("\t").join("'") 
+			.replace(/<%=(.+?)%>/g, "',$1,'") 
+			.split("<%").join("');") 
+			.split("%>").join("p.push('") 
+									  + "');}return p.join('');");
+
+    return fn(data);
+};
+
+RRoller.prototype.addHandler = function(o, e, h, u)
+{
+  if (typeof o.addEventListener != 'undefined')
+	o.addEventListener(e, h, u || false);
+  else if (typeof o.attachEvent != 'undefined')
+	o.attachEvent('on' + e, h);
+}
+
+RRoller.prototype.removeHandler = function(o, e, h, u)
+{
+  if (typeof o.removeEventListener != 'undefined')
+	o.removeEventListener(e, h, u || false);
+  else if (typeof o.detachEvent != 'undefined')
+	o.detachEvent('on' + e, h);
+}
+
+RRoller.prototype.haveParent = function(o, p)
+{
+  if (o) while (o=o.parentNode)
+  {
+	if (o==p) return true;
+  }
+  return false;
+}
+
+
+RRoller.prototype.inView = function(el)
+{
+  var w=window,
+	  d=w.document,
+	  r=el.getBoundingClientRect(),
+	  t={},
+	  i={width:w.innerWidth || d.body.clientWidth || d.documentElement.clientWidth,
+		 height:w.innerHeight || d.body.clientHeight || d.documentElement.clientHeight};
+
+  if (r.bottom<0 || r.right<0 || r.left>i.width || r.top>i.height) return false;
+
+  t.left=r.left<0?0:r.left;
+  t.right=r.right>i.width?i.width-1:r.right;
+  t.top=r.top<0?0:r.top;
+  t.bottom=r.bottom>i.height?i.height-1:r.bottom;
+
+  return d.elementFromPoint( ~~(t.left+(t.right-t.left)/2), ~~(t.top+(t.bottom-t.top)/2) );
+}
+
+
+RRoller.prototype.display = function(r)
+{
+  
+  if (!r) {
+ 	var html = '';
+	/** если нет баннера, показываем заглушку **/
+	html = ((typeof(this.json.banners) != 'object') || (this.json.banners.length < 1)) ? this.json.stub : this.getHTML();
+	if (this.json.setting.custom_offer_code) html += this.json.setting.custom_offer_code.replace('#RAND#', Math.random());
+	if (this.json.cookie_matching) html += this.json.cookie_matching;
+	if (this.json.eye) html += "<img src='" + this.json.eye + "' width='1' height=1' alt='' />";
+	document.write(html || '');
+  }
+  
+  var v=null, that=this;
+
+  this.ad=document.getElementById('rollad-ad-'+this.json.setting.id);
+  if (this.json.setting.type == 'showcase' || this.json.setting.type == 'showcasenew' || this.json.setting.type == 'metro') {
+	  this.showcase();
+  }
+
+  function viewable()
+  {
+	if (!that.json.show) return false;
+	if (v) return false;
+	if (v == null) that.addHandler(window, 'scroll', viewable);
+
+	var p=that.inView(that.ad);
+	v = (that.ad==p || that.haveParent(p, that.ad));
+	if (v)
+	{
+	  that.removeHandler(window, 'scroll', viewable);
+	  var x=new Image();
+	  x.src=that.json.show;
+	  
+	  if(that.json.eyereal) {
+		x=new Image();
+		x.src=that.json.eyereal;
+	  }
+	}
+  }
+
+  setTimeout(viewable, 2000);
+}
+
+
+RRoller.load = function(placeId) {
+  var timestamp = Math.round(new Date().getTime() / 1000);
+  var rand      = Math.round(new Date().getTime() / 1000);
+  try {
+	var href = top.location.search;
+  }
+  catch(e) {
+	var href = document.referrer.split('?')[1];
+  }
+
+  for(var b = /[?&]?(rollad_[^=]+)=([^&]*)/g, r_ = [], c; c = b.exec(href); r_.push('&'+c[1]+'='+c[2]));
+
+  /** get JS for banner (call RRoller.display()) **/
+  document.write('<script type="text/javascript" src="//rollad.e-contenta.com/?aid=' + placeId + '&type=script&timestamp=' +  timestamp + '&referrer=' + encodeURIComponent(document.referrer) + '&location=' + encodeURIComponent(location.href) + '&rand=' + rand + r_.join() + '">' + '</sc' + 'ript>');
+}
+
+RRoller.display = function(placeId, json)
+{
+  var roller = new RRoller(placeId, json);
+  roller.display();
+}
+
+/**
+Подгружает баннер для rollad_id
+**/
+if(typeof rollad_id!='undefined') { RRoller.load(rollad_id); rollad_id=undefined;}

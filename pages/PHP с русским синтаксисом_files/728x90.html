@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(1197)http://content.targetix.net/Hybrid/1FDCD4BDF507E6A07F7EA36FF8164086/728x90.html?cu=http://dsa.targetix.net/?_dIdP.7iCsM1JwyleNT2eJU2mriqnNVljEItLGKZfuSX8S9aO8jANvmoD77BA6oxdJOgeIe1hXTSIV3kXcLFmf0ockSMR2RoQSLIzllLGXvtRmt5CZPEwSlVYJo3aXqG0h1sFpUSDuNbXinjC6MZ6TkocQvUjJag_CjWDh7OwVD9HnAANgi6R3Ar9Hms9_SBBVQbWXUp4O4f3re8JOLhC.VMOyRbmLUWS87zeUBva4aoofuG1xqRRYR7SXiqZx9xuQQGatYpYzzeYATgzZ1Z92q_lmw950vR_Zulg5eImNGwlD3tBD0NbUhOzPb.k.qkiPjDzJ9Em9oWuHr6q_hacue_fT6fSJHdVz9wwzgI67GoT40iN5wneXe3ooCUDSxCiC4ypk34gTB0AT7olOm8co40Zssdu4ykwvrbuC6ISp3Q5f7Qgd.4UIHcPLqGFWsgPgtenXl04.9rjz0VXfOb9VOs5tFtnihNCmwlGjI0ldxgIEvaYKcMHy7mvfPwT8UKrS5YUmFl.917hBamiiWiBHXQrX0aY8IRhtIN63bVBay9cxclXIqJr3YNeWEh5JL72Qpmddia3ojhjWgPVdBNBiLMKkxUzV1_acZksOxX9YswubvsozSoJ54h6Gh7hbi_ZQUN7u.ePr0wlhjohdyhoMKgdjwi55Mm11qvUXVqb7_khjqu9jSs1dJdMELN8sFWOiLx109rol9Z05PLk0OW0ymgWrzVTTwGUJF2mghpYY05k4.IayVOqBFO3SfsUgn0kPXYTkdQxOm.nKxHTzO85TzDtLQ1dOufWRIw.EoGDslPe3uZzyoHf5yw0Rj90sqtfrOHA_GFOT70YU8NBdhSl7Ec775D2s4UQ.vyFCavxLNP8HUjVlAArGWyNXcqxt0rGwM6jSCVkdJ_hUtWJ.Weg00QNYYlNpr8HxjyCGjuJau2oiZu20HP_y0SlRw1dn2OV_38vj5FxE9FefO8BDKnNcwVr6yUMsT6iQ6cXAuC0s3fjw24oa6B9GOc1bbe0jddPPFQHXrxscJh9XFAi0s.oTi4rMQZQNkDLf4Njm5Q0zda2ZvJcEuETrHoc9N.VNSy1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ad.size" content="width=728,height=90">
+<title>728x90</title>
+
+<script src="./easeljs-0.7.1.min.js.Без названия"></script>
+<script src="./tweenjs-0.5.1.min.js.Без названия"></script>
+<script src="./movieclip-0.7.1.min.js.Без названия"></script>
+<script src="./preloadjs-0.4.1.min.js.Без названия"></script>
+<script src="./728x90.js.Без названия"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib._728x90();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+<script type="text/javascript">
+var clickTag = "";
+</script>
+<style type="text/css">
+    body {
+        cursor: pointer;
+    }
+</style><script>
+    window._tx = window._tx || {};
+    window._tx.handleClick = function () {
+        var cu;
+        (function (q) {
+            var i = Math.max(q.indexOf("?cu="), q.indexOf("&cu="));
+            cu = q.substring(i + 4);
+        })(window.location.href);
+        if (cu && cu.length !== 0) {
+            var checkUA = function (v) {
+                return window.navigator.userAgent.indexOf(v) != -1;
+            };
+            if (window.navigator && window.navigator.standalone && (checkUA("iPhone") && !checkUA("iPod") && !checkUA("iPad") || checkUA("iPad") || checkUA("iPod"))) {
+                var a = window.document.createElement("a");
+                a.setAttribute("href", cu);
+                a.setAttribute("target", "_blank");
+                var e = window.document.createEvent("MouseEvent");
+                e.initMouseEvent("click", true, true, window, 1);
+                a.dispatchEvent(e);
+            } else {
+                window.open(cu, "_blank", "");
+            }
+        }
+    };
+</script></head>
+
+<body vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="0" onload="init();" style="background-color:#D4D4D4" onclick="window._tx.handleClick();">
+	<a id="banner-link" href="javascript:window.open(window._tx.clickUrl)">
+<canvas id="canvas" width="726" height="88" style="background-color: rgb(255, 255, 255); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;"></canvas>
+</a>
+
+         <script>
+        // Код обновления цвета рамки 
+            ;
+            (function() {
+                var __canvas = document.getElementById('canvas');
+                __canvas.width = __canvas.width - 2;
+                __canvas.height = __canvas.height - 2;
+                __canvas.style.borderColor = window['BannerBorder'] || '#000000';
+                __canvas.style.borderWidth = '1px';
+                __canvas.style.borderStyle = 'solid';
+
+                initListeners.push(function() {
+                    if (window['BannerBorder']) {
+                        __canvas.style.borderColor = window['BannerBorder'];
+                    }
+                })
+            })();
+        </script>
+
+</body></html>

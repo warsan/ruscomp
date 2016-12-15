@@ -1,0 +1,86 @@
+function bannerAnimate() {
+    var T = new TimelineLite();
+var rough = new RoughEase.ease.config({ template: Power0.easeNone, strength: 1, points: 50, taper: "none", randomize: true, clamp: false});
+T.set(['.ld', '.offer', '.btn_blok', '.lozung',
+       '.avto', '.bg4',  '.bg3',  '.logo',
+       '.bg1', '.btn_block', '.dealer', '.far'], {autoAlpha:0} )
+    .set('.wheel_cont_1', {scaleX:0.60, alpha:0.6})
+    .set('.wheel_cont_2', {scaleX:0.35, scaleY:0.75, alpha:0.6})
+    .set('.lu2',{x:0.5})
+    .set('.bnr', {background:"#000"})
+    .add('repeat')
+    .to('.bnr_wrap', 0.5,{autoAlpha:1})
+    .to('.bg1', 0.5, {autoAlpha:1, onStart:lasar_Anim})
+    .from('.txt1', 0.5, {autoAlpha:0, x:50})
+    .to('.txt1', 0.5, {autoAlpha:0, x:-20, delay:1.5})
+    .from('.txt2', 0.5, {autoAlpha:0, x:30})
+    .add('laser')
+    .from('.lazer1', 0.4, {autoAlpha:0,y:20},'-=0.2')
+    .to(['.lazer1', '.bg1', '.far'], 0.6, {y:90},"laser")
+    .from('.bg2',0.7,{y:-90},"laser")
+    .to('.lazer1', 0.6,{y:111},"laser")
+
+
+    .to(['.bg1'], 0.5, {autoAlpha:0},"laser+=0.2")
+    .to('.bg2', 0.5, {autoAlpha:1},"laser+=0.2")
+
+    .from('.txt3', 0.5, {autoAlpha:0},"laser")
+    .to('.txt2', 0.5, {autoAlpha:0})
+    .to('.txt3', 0.5, {autoAlpha:0, x:-20, delay:1.5})
+    .to(['.lazer1', '.bg2', '.l1'], 0.5,{autoAlpha:0}, "-=0.5")
+
+
+    .to('.bg3', 0.5, {autoAlpha:1}, '-=0.4')
+    .from('.txt4', 0.5, {autoAlpha:0, x:50})
+    .to('.txt4', 0.5, {autoAlpha:0, x:-20, delay:2})
+    .to(['.bg3'], 0.5, {autoAlpha:0})
+    .from('.blick', 3, {autoAlpha:0, ease:rough}, '-=2.9')
+    .set('.blick',{autoAlpha:0})
+    .to('.bg4', 0.5, {autoAlpha:1}, '-=0.5')
+    .from('.txt5', 0.5, {autoAlpha:0, x:50})
+
+    .to('.avto',0.5, {autoAlpha:1}, '-=0.3')
+    .to('.avto',1, {x:-85,y:8}, '-=0.5')
+    .to(['.wheel_1', '.wheel_2'], 1, {rotation:"-=720"}, '-=1')
+
+    .to('.btn_block', 0.5, {autoAlpha:1})
+    .to('.txt5',0.5, {autoAlpha:0, delay:1}, '-=0.5')
+    .from('.txt5_2',0.5, {autoAlpha:0}, '-=0.5')
+    .from('.star',0.5, {autoAlpha:0}, '-=0.5' )
+    .to('.lozung',0.5, {autoAlpha:1}, '-=0.5' )
+    .from('.txt6', 0.5, {autoAlpha:0, x:25})
+    .to('.star',3, {autoAlpha:0, x:-180, scaleX:30}, '-=0.5')
+
+    .to('.lozung',0.5, {autoAlpha:0, delay:1})
+    .to('.offer',0.5, {autoAlpha:1,x:20}, '-=0.2')
+    .add('shot')
+    .to('.l4', 0.5, {autoAlpha:0, delay:1})
+    .set('.bnr', {background:"#fff"})
+    .to('.ld', 0.5, {autoAlpha:1})
+    
+    .to('.d1', 0.5, {autoAlpha:0, delay:2})
+    .to('.d2', 0.5, {autoAlpha:1})
+    .to('.d2', 0.5, {autoAlpha:0, delay:2})
+    .to('.d3', 0.5, {autoAlpha:1})
+    .to('.ld', 0.5, {autoAlpha:0, delay:2})
+    .set('.btn_block', {autoAlpha:0})
+    .to('.dealer', 0.5, {autoAlpha:1})
+    .to('.dealer', 0.5, {autoAlpha:0, delay:2})
+    .set('.btn_block', {autoAlpha:1})
+
+    .to('.logo', 0.5, {autoAlpha:1})
+    .to('.logo', 0.5, {autoAlpha:0, delay:2})
+    .call(function () {
+     T.gotoAndPlay('repeat');
+})
+;
+
+
+function lasar_Anim(){
+    TweenMax.to('.laser', 0.8,{autoAlpha:1});
+    TweenMax.to('.l2', 0.8,{autoAlpha:1});
+    //TweenMax.from('.laser', 5,{y:400});
+}
+}
+
+window.onload = bannerAnimate;

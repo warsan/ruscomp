@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(1428)http://content.targetix.net/Hybrid/8EB5F71E8C21424B38C7778067F763D9/728x90_quartz_pegeot_v2.html?cu=http://dsa.targetix.net/?_hWmxBc9QUIdFDe_kJ6IU5vuInrJIpGGhpv85GtVeG7yvwPJJnTPyVpzTQR0VYAYcvF0HitSPhmNoeBnKmS.jH8wiGA_MbnvJFT.CO1CSi7eqEkKgXMYRrhm37zArzUoOyU_plenC2bIcHVO3Xqu572G7UWqMiLx5jSfbuRsnG9YJfBx8huL69hxz65zU1Td9YlVT7rRXna3MTh1dXZ37rkUMXRd.VPnD6R2qQZeY625DBUmspep348Jtv1DtSH5HHvNPRWP.trzHpup3giNjAT7bTiLpJTk2cGK2RYITtRp6CZ9_cCCg3VmrP6xAYwZCHbnN9oBLPXHDdH.tZhsAONBq8SXvS11Dg0fwwOZ4blbi6yDfXAXJZ8f0R4ww2Ueo5paFBArmdbaby.9iRCPTpgO03oF0t8y9kSeUxZrVjHBbNN_URMGCaZqIm3DsrWm5Idjr3jGe_xJmNznY_NMJ8KrTnqnSKuA1_iuKwWLnj_dFtugtOEXd6MK_vhMVjgFMz6exZD1MftKbRJX_wBojL2itU9Z3a25fZVmV8nlwRWjkmjUtPKx38FAisSo6Ux7wI0HJmHAKExTIUROox1XvrzhvYYVFPoYbSUGKLReyuDWbp5r0UdwDed2wHXUnPKZ_bDGQD6KoabihQ87AuAavOlw1x4O6ZmfZh.wyYWL3m_X4EDAaiO7oyS6rmQgqfdus6_LA32v.L_K5YtfjdXZGYggfoe6BYXcSlVbVQ4aVLpF0eNLjbDaSriNzzTc7bZ3FkXSs716xuitVp4kKRmh3qowBEZDSqem6hBch6kNPVBB71kezy1tmwTfOmuzBVLzS7NnszuCVXpMrjPnh375Lu5vMkGtj20ak8nP.OIZjH1fG3JhhtzoNKsD7GlIrkDn7Hn_VEeHaMFV.dgXxfS3RIvK9JXjI9yq6QHhXcSb05WEHswUpwX5MtVUorSs_BqOts.0DYuFQBX6OqNpXfEFqRDyj8TQ4emqVcQJr_6uhejEA1mKsOGNVQjl3NDDODprgEF4fi4UcM2DM3E1X7stxDUUt9AW_9q8nBh8TVjeWAqR6nHg1iEfWgLoVI4RNRCUl8Wlc0rchWhuVT4MLJ9gOq4TqoYBJKQZiI_nghFXcrGgq5GGjQ.CBusnlbMHQmuyJ8xdhV25OHqsmpzGk0._W8WMjYV0K5oRjGh6kJ9kwZn9HzqfuDO06pmmNlLqMicHwloiqaxwB939bpeh6GVSwntwCii4krf.CPShqLE4HS.bTvkm9KZdlgXxr00j3ImaAD7vwDCTPwxO4x4VLbNZgrQ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ad.size" content="width=728,height=90">
+<title>728x90_quartz_pegeot_v2</title>
+<!-- write your code here -->
+
+
+<script src="./createjs_2015.11.26_54e1c3722102182bb133912ad4442e19_min.js.Без названия"></script>
+<script src="./728x90_quartz_pegeot_v2.js.Без названия"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	// --- write your JS code here ---
+	
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete(evt) {
+	exportRoot = new lib._728x90_quartz_pegeot_v2();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+</script>
+
+<!-- write your code here -->
+
+<style type="text/css">
+    body {
+        cursor: pointer;
+    }
+</style><script>
+    window._tx = window._tx || {};
+    window._tx.handleClick = function () {
+        var cu;
+        (function (q) {
+            var i = Math.max(q.indexOf("?cu="), q.indexOf("&cu="));
+            cu = q.substring(i + 4);
+        })(window.location.href);
+        if (cu && cu.length !== 0) {
+            var checkUA = function (v) {
+                return window.navigator.userAgent.indexOf(v) != -1;
+            };
+            if (window.navigator && window.navigator.standalone && (checkUA("iPhone") && !checkUA("iPod") && !checkUA("iPad") || checkUA("iPad") || checkUA("iPod"))) {
+                var a = window.document.createElement("a");
+                a.setAttribute("href", cu);
+                a.setAttribute("target", "_blank");
+                var e = window.document.createEvent("MouseEvent");
+                e.initMouseEvent("click", true, true, window, 1);
+                a.dispatchEvent(e);
+            } else {
+                window.open(cu, "_blank", "");
+            }
+        }
+    };
+</script></head>
+<body onload="init();" style="background-color:#D4D4D4;margin:0px;" onclick="window._tx.handleClick();">
+	<canvas id="canvas" width="728" height="90" style="background-color:#FFFFFF"></canvas>
+
+
+</body></html>

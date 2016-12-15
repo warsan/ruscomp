@@ -1,0 +1,149 @@
+/****************************************************
+ * Display user avatars
+ * Author: Alex_63
+ * Date: 04.11.2016 / 10.11.2016
+****************************************************/
+
+FORUM.isDifferentHostname = false;
+try {
+	self.document.location.hostname == top.document.location.hostname
+} catch (e) {
+	FORUM.isDifferentHostname = true
+}
+if (self == top || self.parent == top && FORUM.isDifferentHostname) {
+	delete FORUM.isDifferentHostname;
+	(function() {
+		function a() {
+			/*==|||==;
+.punbb em.user-avatar {
+	float: left;
+	height: 32px;
+}
+#pun-index .user-avatar {
+	height: 40px;
+	vertical-align: middle;
+}
+.punbb .user-avatar .user-avatar-link {
+	padding: 0 !important;
+	background: none transparent !important;
+}
+.punbb .user-avatar .user-avatar-link:after {
+	content: none !important;
+}
+.punbb .user-avatar img.ava {
+	border: 2px solid currentColor !important;
+	border-radius: 50%;
+	height: 28px;
+	width: 28px;
+	margin: 1px 9px 2px 0px;
+	opacity: 0.85;
+	background-position: center center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.punbb .user-avatar img.ava:hover {
+	opacity: 1;
+}
+.punbb .user-avatar img.on_ {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	display: block !important;
+	float: right;
+	margin: 3px 8px 0 -16px;
+	position: relative;
+	animation: blinkColor .9s linear infinite;
+	-moz-animation: blinkColor .9s linear infinite;
+	-webkit-animation: blinkColor .9s linear infinite;
+	background: #8ac176;
+	z-index: 100;
+}
+@keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+@-moz-keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+@-webkit-keyframes blinkColor {
+	0% { opacity: 1.0; }
+	50% { opacity: .3; }
+	100% { opacity: 1.0; }
+}
+		==|||==;*/
+		}
+		a = "<style>" + (a.toString().split("==|||==;")[1]) + "</style>";
+		$(a).appendTo("head");
+
+		$().ready(function() {
+			if(!$("#pun-index,#pun-viewforum,#pun-searchtopics,#pun-userlist,#pun-messages").length) return;
+			
+			var a = [],
+				s = ".main .tcr span,.usersname a,#messages td.tc2 a",
+				z = $("link[rel='stylesheet'][href*='/styles/']:first").attr("href"),
+				x = z && z.match(/^(.+?\/\/.*?)\//)[1],
+				u = StaticURL;
+			z = x ? x : "";
+
+			function m(g) {
+				var b = g.response;
+				b = b ? b.users : {};
+				FORUM.avatarsData = b;
+				for (var e in b) {
+					var c = b[e],
+						o = '.main .tcr span[data-text="' + c.username + '"],.usersname a[data-text="' + c.username + '"],.tc2 a[data-text="' + c.username + '"]',
+						k = $(o).parent(),
+						d = c.avatar,
+						r = Math.random().toString().substr(6);
+					if (!d) d = "/i/default_avatar.jpg";
+					d = z + d;
+					$('<em class="user-avatar"><a href="/profile.php?id=' + c.user_id + '" class="user-avatar-link"><img src="' + u + '/i/blank.gif" class="ava" data="' + r + '" style="background-image:url(' + d + ')" /></a></em>').prependTo(k);
+					var j = new Image();
+					j.data = r;
+					j.src = d;
+					j.onload = function() {
+						if (this.height > this.width) $('.main img.ava[data="' + this.data + '"]').css("background-size" ,"100% auto");
+					}
+				}
+				$(s).not(".user-avatar-link").parent().not(":has(.user-avatar)")
+					.prepend('<em class="user-avatar"><a class="user-avatar-link"><img src="' + u + '/i/blank.gif" class="ava" style="background-image:url(' + u + '/i/default_avatar.jpg)" /></a></em>');
+				$(document).on("onlinelistloaded", function() {
+					var o = FORUM.avatarsData;
+					for (var i in o) {
+						var c = o[i],
+							k = $('.main .tcr span[data-text="' + c.username + '"],.usersname a[data-text="' + c.username + '"],.tc2 a[data-text="' + c.username + '"]').parent();
+						if ($(FORUM.onlinelist).find('a[href$="profile.php?id=' + c.user_id + '"]').length) k.find(".ava").after('<img src="' + u + '/i/blank.gif" class="on_" />')
+					}
+				});
+				$("#pun-index").length && $(document).trigger("onlinelistloaded");
+			};
+
+			$(s).map(function() {
+				var t = $(this);
+				if (window.SUBF && t.parents(".category").find("h2>span:hasSmb").length) return;
+				var b = t.text();
+				if (t.hasClass("byuser")) {
+					b = b.substr(1)
+				} else b = b.split(" - ")[1];
+				if (t.parent().hasClass("usersname") || t.parent().hasClass("tc2")) {
+					b = $(this).text()
+				}
+				t.attr("data-text", b);
+				if ($.inArray(b, a) == -1) a.push(b)
+			});
+			$.post("/api.php", {
+				method: "users.get",
+				username: a,
+				fields: "user_id,username,avatar",
+				limit: "100"
+			}, m, "json");
+			!$("#pun-index").length ? $.get("/", function(e) {
+				FORUM.onlinelist = $(e).find('li[id="onlinelist"].item5:first').html();
+				$(document).trigger("onlinelistloaded")
+			}) : FORUM.onlinelist = $('li[id="onlinelist"].item5:first').html();
+		});
+	})();
+}

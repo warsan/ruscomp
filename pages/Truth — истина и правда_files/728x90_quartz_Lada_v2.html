@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(1404)http://content.targetix.net/Hybrid/6B0A166E3C2EE0BD05C6138E6A53744F/728x90_quartz_Lada_v2.html?cu=http://dsa.targetix.net/?_9c8LgCCVwu1tpmJlepZtA5poEqYza.AJAoK9gO4zkmfEUfH9fQM0Pc0Vuab.HvCFmqKEWJFx2SiDvnP2JnrKXcRJeoCVRlHYHEpO2TXmOmhS0OaLA6B86xz0E8LrPVuP1JYgbU4IdL85R0jrLhuzwWjzrSHUTqjX6kr1QHVYNSzsi7Bz375Sj8M3N1bGf2mXiEcHtRgsUvuxm2EqZlAunPnKzt000XIroEGMFCI9f6T_dH17Dle3tjzDeLmd3H2PJrfKKuuFJoW.Bf3yg7bGNAXTDgTTpNmYrlQ19w5o44YUSnDGnUApO5nm1QeQEjMvYqAufK.EwpL6hrxc7qhQiER8V71r1ZAh2IoBB2pJ.NUbsz7inJ51.0p.CIo_j8aiCvskZIjGa8hzjmi03Qr6_LNNUD3RcZ51Tgfm65W1Fx8j59LhWZdH7NhlHC62bHDh3dEtDHQIpmbnWfpEt9QhOeaz4spSOwla7hwfgQopYqLcb4nBrqRyC1f8vb8UDSV_MDLIO4djStuGZNUvYsFMmYIWmh84NUFJ_7hSL4S2_WMmK3TADOlUgPhl6JLusTLCULgu4UGjUoq2jI0VIRvQBogCEIZNedOY85vILSxAXk3Qvr3TIMyVneGsWM_uT3qBzHDmDyMTI151aBZH9ge64WJTe6nliV4TESSqyKlxSp12Qsyr8wSgIxgaKZU3lyy.ooZ9AeTTY2qzoT6S9zCNcxwVzOcMIdqFtSomGt822tHzjhuv9zoKURMd7vdk.9rcmZy6z74po0qMH58AZqlWUNiFQO_BPEM4k_7vbKeBtBAzKRSTmnuKvdeQTQq8vCHjfWeebYvPClx9rVT19pXxMQYKJl99oQFVdXvt2H39JBNH5TMDyB2U2FP47NcmnUGVfplAG2SP6duP2Bh_MO2UZTiLcFwn1BQ6CLEdK1dzM0_bzTlUK8dXinLOMRPJs4OIK6EqBph7u9gCcpj3ylBRf40e4_LHngcsgGuCntaWSgvIuB_WhSs4LUtD9coo0wj7JWU59xCrkDvgHJ4ZA7wYcXbz_KGq3f9TWOBhppIKFzoI5oXA1k6PyUBoA5H9WJKgyCWr5sdWD5d.gcPKVa3DbKPQPHZMPRnrQAE6qR6XalleOeN9jUvZUTNHkdOxU1Bbe4KfDLYilwySmTTeb7zSiJ54hEq3HpATS080o282PjREnLUHXEiUPcFsLDcaS5tTPMH0daKYlnLJo6dve_nedY7DzrEqjnRT_UZtY0VuAmmj4zkl87ln1CjL8j2T3Z4j -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ad.size" content="width=728,height=90">
+<title>728x90_quartz_Lada_v2</title>
+<!-- write your code here -->
+
+
+<script src="./createjs_2015.11.26_54e1c3722102182bb133912ad4442e19_min.js.Без названия"></script>
+<script src="./728x90_quartz_Lada_v2.js.Без названия"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	// --- write your JS code here ---
+	
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete(evt) {
+	exportRoot = new lib._728x90_quartz_Lada_v2();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+</script>
+
+<!-- write your code here -->
+
+<style type="text/css">
+    body {
+        cursor: pointer;
+    }
+</style><script>
+    window._tx = window._tx || {};
+    window._tx.handleClick = function () {
+        var cu;
+        (function (q) {
+            var i = Math.max(q.indexOf("?cu="), q.indexOf("&cu="));
+            cu = q.substring(i + 4);
+        })(window.location.href);
+        if (cu && cu.length !== 0) {
+            var checkUA = function (v) {
+                return window.navigator.userAgent.indexOf(v) != -1;
+            };
+            if (window.navigator && window.navigator.standalone && (checkUA("iPhone") && !checkUA("iPod") && !checkUA("iPad") || checkUA("iPad") || checkUA("iPod"))) {
+                var a = window.document.createElement("a");
+                a.setAttribute("href", cu);
+                a.setAttribute("target", "_blank");
+                var e = window.document.createEvent("MouseEvent");
+                e.initMouseEvent("click", true, true, window, 1);
+                a.dispatchEvent(e);
+            } else {
+                window.open(cu, "_blank", "");
+            }
+        }
+    };
+</script></head>
+<body onload="init();" style="background-color:#D4D4D4;margin:0px;" onclick="window._tx.handleClick();">
+	<canvas id="canvas" width="728" height="90" style="background-color:#FFFFFF"></canvas>
+
+
+</body></html>
